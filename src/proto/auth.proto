@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package auth;
+
+// *************** Enums Types *************** 
+enum ResponseStatusEnum {
+	SUCCESS = 0;
+	PARTIAL_DATA = 1;
+	NO_DATA_ERROR = 2;
+	BAD_REQUEST_ERROR = 3;
+	UNAUTHORIZED_ERROR = 4;
+	FORBIDDEN_ERROR = 5;
+	NOT_FOUND_ERROR = 6;
+	NOT_ACCEPTED_ERROR = 7;
+	ALREADY_EXISTS_ERROR = 8;
+	INTERNAL_SERVER_ERROR = 9;
+}
+
+enum AuthTypeEnum {
+	LOGIN = 0;
+	SIGNUP = 1;
+}
+
+enum TokenTypesEnum {
+	INITIAL_TOKEN = 0;
+	REFRESH_TOKEN = 1;
+}
+// *************** Enums Types *************** 
+
+service AuthServices {
+	rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse) {}
+	rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenResponse) {}
+	rpc Signout (SignoutRequest) returns (SignoutResponse) {}
+	rpc UpdateFcmToken (UpdateFcmTokenRequest) returns (UpdateFcmTokenResponse) {}
+}
+
+message GeoData {
+	optional string status = 0;
+	optional string message = 1;
+	optional string continent = 2;
+	optional string continentCodes = 3;
+	optional string country = 4;
+	optional string countryCode = 5;
+	optional string region = 6;
+	optional string regionName = 7;
+	optional string city = 8;
+	optional string zip = 9;
+	optional string lat = 10;
+	optional string lon = 11;
+	optional string timezone = 12;
+	optional string offset = 13;
+	optional string currency = 14;
+	optional string isp = 15;
+	optional string org = 16;
+	optional string as = 17;
+	optional string asname = 18;
+	optional string reverse = 19;
+	optional string mobile = 20;
+	optional string proxy = 21;
+	optional string hosting = 22;
+	optional string query = 23;
+};
+
+message ClientMetaData {
+	optional string ip = 0;
+	optional string userAgent = 1;
+	optional GeoData geoData = 2;
+}
+
+// *************** AUTHENTICATE Types *************** //
+message AuthenticateRequest {
+	string token = 0;
+	string publicKey = 1;
+	string fcmToken = 2;
+	optional ClientMetaData clientMetaData = 3;
+}
+
+message AuthenticatedUser {
+	string token = 0;
+	optional string publicKey = 1;
+	string name = 2;
+	string email = 3;
+	optional string photoUrl = 4;
+	string userId = 5;
+}
+
+message AuthenticateResponseData {
+	AuthTypeEnum method = 0;
+	AuthenticatedUser user = 1;
+}
+
+message AuthenticateResponse {
+	ResponseStatusEnum responseStatus = 0;
+	AuthenticateResponseData data = 1;
+}
+// *************** AUTHENTICATE Types *************** //
+
+
+// *************** REFRESH_TOKEN Types *************** //
+message RefreshTokenRequest {
+	string loginId = 0;
+	string userId = 1;
+	optional ClientMetaData clientMetaData = 2;
+}
+
+message RefreshTokenResponseData {
+	string token = 0;
+}
+
+message RefreshTokenResponse {
+	ResponseStatusEnum responseStatus = 0;
+	RefreshTokenResponseData data = 1;
+}
+// *************** REFRESH_TOKEN Types *************** //
+
+
+// *************** SIGNOUT Types *************** //
+message SignoutRequest {
+	string loginId = 0;
+	string userId = 1;
+}
+
+message SignoutResponse {
+	ResponseStatusEnum responseStatus = 0;
+}
+// *************** SIGNOUT Types *************** //
+
+// *************** UPDATE_FCM_TOKEN Types *************** //
+message UpdateFcmTokenRequest {
+	string userId = 0;
+	string fcmToken = 1;
+}
+
+message UpdateFcmTokenResponse {
+	ResponseStatusEnum responseStatus = 0;
+}
+// *************** UPDATE_FCM_TOKEN Types *************** //

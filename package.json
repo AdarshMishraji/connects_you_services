@@ -1,0 +1,19 @@
+{
+  "name": "connects_you_services",
+  "packageManager": "yarn@3.2.4",
+  "scripts": {
+    "proto-gen": "$(npm bin)/proto-loader-gen-types --grpcLib=@grpc/grpc-js --outDir=src/services/ src/proto/*.proto --longs=String --enums=String --defaults --oneofs --outputTemplate=%sOutput",
+    "prepack": "tsc -p tsconfig.release.json && mkdir -p proto && cp -rf ./src/proto/* ./proto/ && cp -rf ./build/src/* . && rm -rf ./build && rm -rf ./src",
+    "build": "tsc -p tsconfig.release.json"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.7.2",
+    "@grpc/proto-loader": "^0.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  }
+}

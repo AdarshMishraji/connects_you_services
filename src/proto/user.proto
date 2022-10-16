@@ -1,0 +1,163 @@
+syntax="proto3";
+
+package user;
+
+// *************** Enums Types *************** 
+enum ResponseStatusEnum {
+	SUCCESS = 0;
+	PARTIAL_DATA = 1;
+	NO_DATA_ERROR = 2;
+	BAD_REQUEST_ERROR = 3;
+	UNAUTHORIZED_ERROR = 4;
+	FORBIDDEN_ERROR = 5;
+	NOT_FOUND_ERROR = 6;
+	NOT_ACCEPTED_ERROR = 7;
+	ALREADY_EXISTS_ERROR = 8;
+	INTERNAL_SERVER_ERROR = 9;
+}
+// *************** Enums Types ***************
+
+service UserServices {
+  rpc GetUserDetails (UserDetailsRequest) returns (UserDetailsResponse) {}
+  rpc GetAllUsers (AllUsersRequest) returns (AllUsersResponse) {}
+
+  rpc GetUserLoginInfo (UserLoginInfoRequest) returns (UserLoginInfoResponse) {}
+  rpc GetUserLoginHistory (UserLoginHistoryRequest) returns (UserLoginHistoryResponse) {}
+
+  rpc SetUserOnlineStatus (SetUserOnlineStatusRequest) returns (SetUserOnlineStatusResponse) {}
+}
+
+
+// *************** USER_DETAILS Types *************** //
+message UserDetailsRequest {
+  string userId = 0;
+}
+
+message UserDetails {
+  string userId = 0;
+  string name = 1;
+  string email = 2;
+  string photoUrl = 3;
+  optional string description = 4;
+  string publicKey = 5;
+  string createdAt = 6;
+  string updatedAt = 7;
+}
+
+message RepeatedUserDetails {
+  repeated UserDetails users = 0;
+}
+
+message UserDetailsData {
+  UserDetails user = 0;
+}
+
+message UserDetailsResponse {
+  ResponseStatusEnum responseStatus = 0;
+  UserDetailsData data = 1;
+}
+// *************** USER_DETAILS Types *************** //
+
+
+// *************** ALL_USERS Types *************** //
+message AllUsersRequest {
+	optional int32 limit = 0;
+	optional int32 offset = 1;
+  optional string exceptUserId = 3;
+}
+
+message AllUsersResponse {
+  ResponseStatusEnum responseStatus = 0;
+  RepeatedUserDetails data = 1;
+}
+// *************** ALL_USERS Types *************** //
+
+
+// *************** USER_LOGIN_INFO Types *************** //
+message UserLoginInfoRequest {
+  string userId = 0;
+  string loginId = 1;
+}
+
+message GeoData {
+	optional string status = 0;
+	optional string message = 1;
+	optional string continent = 2;
+	optional string continentCodes = 3;
+	optional string country = 4;
+	optional string countryCode = 5;
+	optional string region = 6;
+	optional string regionName = 7;
+	optional string city = 8;
+	optional string zip = 9;
+	optional string lat = 10;
+	optional string lon = 11;
+	optional string timezone = 12;
+	optional string offset = 13;
+	optional string currency = 14;
+	optional string isp = 15;
+	optional string org = 16;
+	optional string as = 17;
+	optional string asname = 18;
+	optional string reverse = 19;
+	optional string mobile = 20;
+	optional string proxy = 21;
+	optional string hosting = 22;
+	optional string query = 23;
+};
+
+message ClientMetaData {
+	optional string ip = 0;
+	optional string userAgent = 1;
+	optional GeoData geoData = 2;
+}
+
+message UserLoginInfo {
+  string userId = 0;
+  string loginId = 1;
+  ClientMetaData loginMetaData = 2;
+  bool isValid = 3;
+  string createdAt = 4;
+}
+
+message UserLoginInfoData {
+  UserLoginInfo userLoginInfo = 0;
+}
+
+message UserLoginInfoResponse {
+  ResponseStatusEnum responseStatus = 0;
+  UserLoginInfoData data = 1;
+}
+// *************** USER_LOGIN_INFO Types *************** //
+
+
+// *************** USER_LOGIN_HISTORY Types *************** //
+message UserLoginHistoryRequest {
+  string userId = 0;
+  optional int32 limit = 1;
+  optional int32 offset = 2;
+	optional bool nonValidAllowed = 3;
+}
+
+message UserLoginHistoryData {
+  repeated UserLoginInfo userLoginHistory = 0;
+	int32 total = 1;
+}
+
+message UserLoginHistoryResponse {
+  ResponseStatusEnum responseStatus = 0;
+  UserLoginHistoryData data = 1;
+}
+// *************** USER_LOGIN_HISTORY Types *************** //
+
+
+// *************** SET_USER_ONLINE_STATUS Types *************** //
+message SetUserOnlineStatusRequest {
+	string userId = 0;
+	bool isOnline = 1;
+}
+
+message SetUserOnlineStatusResponse {
+	ResponseStatusEnum responseStatus = 0;
+}
+// *************** SET_USER_ONLINE_STATUS Types *************** //
