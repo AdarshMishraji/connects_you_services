@@ -23,8 +23,6 @@ service UserServices {
 
   rpc GetUserLoginInfo (UserLoginInfoRequest) returns (UserLoginInfoResponse) {}
   rpc GetUserLoginHistory (UserLoginHistoryRequest) returns (UserLoginHistoryResponse) {}
-
-  rpc SetUserOnlineStatus (SetUserOnlineStatusRequest) returns (SetUserOnlineStatusResponse) {}
 }
 
 
@@ -149,15 +147,3 @@ message UserLoginHistoryResponse {
   UserLoginHistoryData data = 1;
 }
 // *************** USER_LOGIN_HISTORY Types *************** //
-
-
-// *************** SET_USER_ONLINE_STATUS Types *************** //
-message SetUserOnlineStatusRequest {
-	string userId = 0;
-	bool isOnline = 1;
-}
-
-message SetUserOnlineStatusResponse {
-	ResponseStatusEnum responseStatus = 0;
-}
-// *************** SET_USER_ONLINE_STATUS Types *************** //

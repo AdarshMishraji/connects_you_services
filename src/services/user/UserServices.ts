@@ -4,8 +4,6 @@ import type * as grpc from '@grpc/grpc-js'
 import type { MethodDefinition } from '@grpc/proto-loader'
 import type { AllUsersRequest as _user_AllUsersRequest, AllUsersRequestOutput as _user_AllUsersRequestOutput } from '../user/AllUsersRequest';
 import type { AllUsersResponse as _user_AllUsersResponse, AllUsersResponseOutput as _user_AllUsersResponseOutput } from '../user/AllUsersResponse';
-import type { SetUserOnlineStatusRequest as _user_SetUserOnlineStatusRequest, SetUserOnlineStatusRequestOutput as _user_SetUserOnlineStatusRequestOutput } from '../user/SetUserOnlineStatusRequest';
-import type { SetUserOnlineStatusResponse as _user_SetUserOnlineStatusResponse, SetUserOnlineStatusResponseOutput as _user_SetUserOnlineStatusResponseOutput } from '../user/SetUserOnlineStatusResponse';
 import type { UserDetailsRequest as _user_UserDetailsRequest, UserDetailsRequestOutput as _user_UserDetailsRequestOutput } from '../user/UserDetailsRequest';
 import type { UserDetailsResponse as _user_UserDetailsResponse, UserDetailsResponseOutput as _user_UserDetailsResponseOutput } from '../user/UserDetailsResponse';
 import type { UserLoginHistoryRequest as _user_UserLoginHistoryRequest, UserLoginHistoryRequestOutput as _user_UserLoginHistoryRequestOutput } from '../user/UserLoginHistoryRequest';
@@ -49,16 +47,6 @@ export interface UserServicesClient extends grpc.Client {
   getUserLoginInfo(argument: _user_UserLoginInfoRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_user_UserLoginInfoResponseOutput>): grpc.ClientUnaryCall;
   getUserLoginInfo(argument: _user_UserLoginInfoRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_user_UserLoginInfoResponseOutput>): grpc.ClientUnaryCall;
   getUserLoginInfo(argument: _user_UserLoginInfoRequest, callback: grpc.requestCallback<_user_UserLoginInfoResponseOutput>): grpc.ClientUnaryCall;
-  
-  SetUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  SetUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  SetUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  SetUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  setUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  setUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  setUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  setUserOnlineStatus(argument: _user_SetUserOnlineStatusRequest, callback: grpc.requestCallback<_user_SetUserOnlineStatusResponseOutput>): grpc.ClientUnaryCall;
-  
 }
 
 export interface UserServicesHandlers extends grpc.UntypedServiceImplementation {
@@ -68,10 +56,7 @@ export interface UserServicesHandlers extends grpc.UntypedServiceImplementation 
   
   GetUserLoginHistory: grpc.handleUnaryCall<_user_UserLoginHistoryRequestOutput, _user_UserLoginHistoryResponse>;
   
-  GetUserLoginInfo: grpc.handleUnaryCall<_user_UserLoginInfoRequestOutput, _user_UserLoginInfoResponse>;
-  
-  SetUserOnlineStatus: grpc.handleUnaryCall<_user_SetUserOnlineStatusRequestOutput, _user_SetUserOnlineStatusResponse>;
-  
+  GetUserLoginInfo: grpc.handleUnaryCall<_user_UserLoginInfoRequestOutput, _user_UserLoginInfoResponse>;  
 }
 
 export interface UserServicesDefinition extends grpc.ServiceDefinition {
@@ -79,5 +64,4 @@ export interface UserServicesDefinition extends grpc.ServiceDefinition {
   GetUserDetails: MethodDefinition<_user_UserDetailsRequest, _user_UserDetailsResponse, _user_UserDetailsRequestOutput, _user_UserDetailsResponseOutput>
   GetUserLoginHistory: MethodDefinition<_user_UserLoginHistoryRequest, _user_UserLoginHistoryResponse, _user_UserLoginHistoryRequestOutput, _user_UserLoginHistoryResponseOutput>
   GetUserLoginInfo: MethodDefinition<_user_UserLoginInfoRequest, _user_UserLoginInfoResponse, _user_UserLoginInfoRequestOutput, _user_UserLoginInfoResponseOutput>
-  SetUserOnlineStatus: MethodDefinition<_user_SetUserOnlineStatusRequest, _user_SetUserOnlineStatusResponse, _user_SetUserOnlineStatusRequestOutput, _user_SetUserOnlineStatusResponseOutput>
 }

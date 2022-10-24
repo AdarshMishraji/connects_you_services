@@ -15,8 +15,6 @@ export interface ProtoGrpcType {
     GeoData: MessageTypeDefinition
     RepeatedUserDetails: MessageTypeDefinition
     ResponseStatusEnum: EnumTypeDefinition
-    SetUserOnlineStatusRequest: MessageTypeDefinition
-    SetUserOnlineStatusResponse: MessageTypeDefinition
     UserDetails: MessageTypeDefinition
     UserDetailsData: MessageTypeDefinition
     UserDetailsRequest: MessageTypeDefinition
