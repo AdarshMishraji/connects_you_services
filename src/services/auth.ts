@@ -26,6 +26,7 @@ export interface ProtoGrpcType {
     TokenTypesEnum: EnumTypeDefinition
     UpdateFcmTokenRequest: MessageTypeDefinition
     UpdateFcmTokenResponse: MessageTypeDefinition
+    UserLoginInfo: MessageTypeDefinition
   }
 }
 

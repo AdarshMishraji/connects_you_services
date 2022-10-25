@@ -84,9 +84,18 @@ message AuthenticatedUser {
 	string userId = 5;
 }
 
+message UserLoginInfo {
+  string userId = 0;
+  string loginId = 1;
+  ClientMetaData loginMetaData = 2;
+  bool isValid = 3;
+  string createdAt = 4;
+}
+
 message AuthenticateResponseData {
 	AuthTypeEnum method = 0;
 	AuthenticatedUser user = 1;
+	UserLoginInfo loginInfo = 2;
 }
 
 message AuthenticateResponse {

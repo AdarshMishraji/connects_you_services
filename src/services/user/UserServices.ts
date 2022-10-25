@@ -47,6 +47,7 @@ export interface UserServicesClient extends grpc.Client {
   getUserLoginInfo(argument: _user_UserLoginInfoRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_user_UserLoginInfoResponseOutput>): grpc.ClientUnaryCall;
   getUserLoginInfo(argument: _user_UserLoginInfoRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_user_UserLoginInfoResponseOutput>): grpc.ClientUnaryCall;
   getUserLoginInfo(argument: _user_UserLoginInfoRequest, callback: grpc.requestCallback<_user_UserLoginInfoResponseOutput>): grpc.ClientUnaryCall;
+  
 }
 
 export interface UserServicesHandlers extends grpc.UntypedServiceImplementation {
@@ -56,7 +57,8 @@ export interface UserServicesHandlers extends grpc.UntypedServiceImplementation 
   
   GetUserLoginHistory: grpc.handleUnaryCall<_user_UserLoginHistoryRequestOutput, _user_UserLoginHistoryResponse>;
   
-  GetUserLoginInfo: grpc.handleUnaryCall<_user_UserLoginInfoRequestOutput, _user_UserLoginInfoResponse>;  
+  GetUserLoginInfo: grpc.handleUnaryCall<_user_UserLoginInfoRequestOutput, _user_UserLoginInfoResponse>;
+  
 }
 
 export interface UserServicesDefinition extends grpc.ServiceDefinition {
