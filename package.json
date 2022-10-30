@@ -2,7 +2,7 @@
   "name": "connects_you_services",
   "packageManager": "yarn@3.2.4",
   "scripts": {
-    "proto-gen": "$(npm bin)/proto-loader-gen-types --grpcLib=@grpc/grpc-js --outDir=src/services/ src/proto/*.proto --longs=String --enums=String --defaults --oneofs --outputTemplate=%sOutput",
+    "proto-gen": "$(npm bin)/proto-loader-gen-types --grpcLib=@grpc/grpc-js --outDir=src/services/ src/proto/*.proto --longs=String --enums=String --defaults --oneofs --outputTemplate=%sOutput && ts-node src/scripts/redefineEnumValues.ts",
     "prepack": "tsc -p tsconfig.release.json && mkdir -p proto && cp -rf ./src/proto/* ./proto/ && cp -rf ./build/src/* . && rm -rf ./build && rm -rf ./src",
     "build": "tsc -p tsconfig.release.json",
     "reinstall-nm": "rm -rf node_modules yarn.lock && yarn cache clean && touch yarn.lock && yarn"

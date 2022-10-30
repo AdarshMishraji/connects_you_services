@@ -1,8 +1,8 @@
 // Original file: src/proto/room.proto
 
 export enum RoomUserRoleEnum {
-  DUET_CREATOR = 0,
-  DUET_PARTICIPANT = 1,
-  GROUP_ADMIN = 2,
-  GROUP_MEMBER = 3,
+  DUET_CREATOR  = 'DUET_CREATOR',
+  DUET_PARTICIPANT  = 'DUET_PARTICIPANT',
+  GROUP_ADMIN  = 'GROUP_ADMIN',
+  GROUP_MEMBER  = 'GROUP_MEMBER',
 }
