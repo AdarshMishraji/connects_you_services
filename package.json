@@ -4,7 +4,8 @@
   "scripts": {
     "proto-gen": "$(npm bin)/proto-loader-gen-types --grpcLib=@grpc/grpc-js --outDir=src/services/ src/proto/*.proto --longs=String --enums=String --defaults --oneofs --outputTemplate=%sOutput",
     "prepack": "tsc -p tsconfig.release.json && mkdir -p proto && cp -rf ./src/proto/* ./proto/ && cp -rf ./build/src/* . && rm -rf ./build && rm -rf ./src",
-    "build": "tsc -p tsconfig.release.json"
+    "build": "tsc -p tsconfig.release.json",
+    "reinstall-nm": "rm -rf node_modules yarn.lock && yarn cache clean && touch yarn.lock && yarn"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.7.2",

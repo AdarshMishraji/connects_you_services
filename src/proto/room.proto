@@ -1,0 +1,145 @@
+syntax="proto3";
+
+package room;
+
+// *************** Enums Types *************** 
+enum ResponseStatusEnum {
+	SUCCESS = 0;
+	PARTIAL_DATA = 1;
+	NO_DATA_ERROR = 2;
+	BAD_REQUEST_ERROR = 3;
+	UNAUTHORIZED_ERROR = 4;
+	FORBIDDEN_ERROR = 5;
+	NOT_FOUND_ERROR = 6;
+	NOT_ACCEPTED_ERROR = 7;
+	ALREADY_EXISTS_ERROR = 8;
+	INTERNAL_SERVER_ERROR = 9;
+}
+
+enum RoomTypesEnum {
+	DUET=0;
+	GROUP=1;
+}
+
+enum RoomUserRoleEnum {
+	DUET_CREATOR = 0;
+	DUET_PARTICIPANT = 1;
+	GROUP_ADMIN = 2;
+	GROUP_MEMBER = 3;
+}
+// *************** Enums Types ***************
+
+service RoomServices {
+	rpc FindOrCreateDuetRoom (FindOrCreateDuetRoomRequest) returns (FindOrCreateDuetRoomResponse) {}
+
+	rpc CreateGroupRoom (CreateGroupRoomRequest) returns (CreateGroupRoomResponse) {}
+	rpc AddUsersToGroupRoom (AddUsersToGroupRoomRequest) returns (AddUsersToGroupRoomResponse) {}
+	rpc UpdateUserRoleInGroupRoom (UpdateUserRoleInGroupRoomRequest) returns (UpdateUserRoleInGroupRoomResponse) {}
+
+	rpc FetchUserRooms (FetchUserRoomsRequest) returns (FetchUserRoomsResponse) {}
+}
+
+message RoomUsers {
+	string userId = 0;
+	RoomUserRoleEnum userRole = 1;
+	string joinedAt = 2;
+}
+
+message Room {
+	string roomId = 0;
+	optional string roomName = 1;
+	optional string roomLogoUrl = 2; 
+	optional string roomDescription = 3; 
+	optional RoomTypesEnum roomType = 4; 
+	repeated RoomUsers roomUsers = 5;
+	string createdByUserId = 6;
+	string createdAt = 7;
+	string updatedAt = 8;
+}
+
+message RoomData {
+	Room rooms = 0;
+}
+
+message RepeatedRoomData {
+	repeated Room rooms = 0;
+}
+
+
+// *************** FIND_OR_CREATE_DUET_ROOM Types ***************
+message FindOrCreateDuetRoomRequest {
+	string createdByUserId = 0;
+	string participantUserId = 1;
+}
+
+message FindOrCreateDuetRoomResponse {
+	ResponseStatusEnum status = 0;
+	RoomData data = 1;
+}
+// *************** FIND_OR_CREATE_DUET_ROOM Types ***************
+
+
+// *************** CREATE_GROUP_ROOM Types ***************
+message CreateGroupRoomRequest {
+	string roomName = 0;
+	optional string roomLogoUrl = 1;
+	optional string roomDescription = 2;
+	string createdByUserId = 3;
+	repeated string roomUserIds = 4;
+}
+
+message CreateGroupRoomResponse {
+	ResponseStatusEnum status = 0;
+	RoomData data = 1;
+}
+// *************** CREATE_GROUP_ROOM Types ***************
+
+
+// *************** ADD_USERS_TO_GROUP_ROOM Types ***************
+message AddUsersToGroupRoomRequestRoomUsers {
+	string userId = 0;
+	RoomUserRoleEnum userRole = 1;
+}
+
+message AddUsersToGroupRoomRequest {
+	string roomId = 0;
+	repeated AddUsersToGroupRoomRequestRoomUsers roomUsers = 1;
+	string creatorUserId = 2;
+}
+
+message AddUsersToGroupRoomResponse {
+	ResponseStatusEnum status = 0;
+	RoomData data = 1;
+}
+// *************** ADD_USERS_TO_GROUP_ROOM Types ***************
+
+
+// *************** UPDATE_USER_ROLE_IN_GROUP_ROOM Types ***************
+message UpdateUserRoleInGroupRoomRequest {
+	string roomId = 0;
+	string userId = 1;
+	RoomUserRoleEnum userRole = 2;
+	string creatorUserId = 3;
+}
+
+message UpdateUserRoleInGroupRoomResponse {
+	ResponseStatusEnum status = 0;
+	RoomData data = 1;
+}
+// *************** UPDATE_USER_ROLE_IN_GROUP_ROOM Types ***************
+
+
+// *************** FETCH_USER_ROOMS Types ***************
+message FetchUserRoomsRequest {
+	string userId = 0;
+	optional string timestamp = 1;
+	optional int32 limit = 2;
+	optional bool onlyDuets = 3;
+	optional bool onlyGroups = 4;
+}
+
+message FetchUserRoomsResponse {
+	ResponseStatusEnum status = 0;
+	RepeatedRoomData data = 1;
+}
+// *************** FETCH_USER_ROOMS Types ***************
