@@ -14,18 +14,18 @@ export interface ProtoGrpcType {
     AddUsersToGroupRoomResponse: MessageTypeDefinition
     CreateGroupRoomRequest: MessageTypeDefinition
     CreateGroupRoomResponse: MessageTypeDefinition
+    FetchUserRoomsData: MessageTypeDefinition
     FetchUserRoomsRequest: MessageTypeDefinition
     FetchUserRoomsResponse: MessageTypeDefinition
     FindOrCreateDuetRoomRequest: MessageTypeDefinition
     FindOrCreateDuetRoomResponse: MessageTypeDefinition
-    RepeatedRoomData: MessageTypeDefinition
     ResponseStatusEnum: EnumTypeDefinition
     Room: MessageTypeDefinition
     RoomData: MessageTypeDefinition
     RoomServices: SubtypeConstructor<typeof grpc.Client, _room_RoomServicesClient> & { service: _room_RoomServicesDefinition }
     RoomTypesEnum: EnumTypeDefinition
+    RoomUser: MessageTypeDefinition
     RoomUserRoleEnum: EnumTypeDefinition
-    RoomUsers: MessageTypeDefinition
     UpdateUserRoleInGroupRoomRequest: MessageTypeDefinition
     UpdateUserRoleInGroupRoomResponse: MessageTypeDefinition
   }

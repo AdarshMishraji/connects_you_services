@@ -2,10 +2,10 @@
 
 import type { Room as _room_Room, RoomOutput as _room_RoomOutput } from '../room/Room';
 
-export interface RepeatedRoomData {
+export interface FetchUserRoomsData {
   'rooms'?: (_room_Room)[];
 }
 
-export interface RepeatedRoomDataOutput {
+export interface FetchUserRoomsDataOutput {
   'rooms': (_room_RoomOutput)[];
 }

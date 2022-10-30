@@ -7,10 +7,12 @@ export interface FetchUserRoomsRequest {
   'limit'?: (number);
   'onlyDuets'?: (boolean);
   'onlyGroups'?: (boolean);
+  'requiredDetailedRoomUserData'?: (boolean);
   '_timestamp'?: "timestamp";
   '_limit'?: "limit";
   '_onlyDuets'?: "onlyDuets";
   '_onlyGroups'?: "onlyGroups";
+  '_requiredDetailedRoomUserData'?: "requiredDetailedRoomUserData";
 }
 
 export interface FetchUserRoomsRequestOutput {
@@ -19,8 +21,10 @@ export interface FetchUserRoomsRequestOutput {
   'limit'?: (number);
   'onlyDuets'?: (boolean);
   'onlyGroups'?: (boolean);
+  'requiredDetailedRoomUserData'?: (boolean);
   '_timestamp': "timestamp";
   '_limit': "limit";
   '_onlyDuets': "onlyDuets";
   '_onlyGroups': "onlyGroups";
+  '_requiredDetailedRoomUserData': "requiredDetailedRoomUserData";
 }

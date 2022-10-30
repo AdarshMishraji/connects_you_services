@@ -1,7 +1,7 @@
 // Original file: src/proto/room.proto
 
 import type { RoomTypesEnum as _room_RoomTypesEnum } from '../room/RoomTypesEnum';
-import type { RoomUsers as _room_RoomUsers, RoomUsersOutput as _room_RoomUsersOutput } from '../room/RoomUsers';
+import type { RoomUser as _room_RoomUser, RoomUserOutput as _room_RoomUserOutput } from '../room/RoomUser';
 
 export interface Room {
   'roomId'?: (string);
@@ -9,7 +9,7 @@ export interface Room {
   'roomLogoUrl'?: (string);
   'roomDescription'?: (string);
   'roomType'?: (_room_RoomTypesEnum | keyof typeof _room_RoomTypesEnum);
-  'roomUsers'?: (_room_RoomUsers)[];
+  'roomUsers'?: (_room_RoomUser)[];
   'createdByUserId'?: (string);
   'createdAt'?: (string);
   'updatedAt'?: (string);
@@ -25,7 +25,7 @@ export interface RoomOutput {
   'roomLogoUrl'?: (string);
   'roomDescription'?: (string);
   'roomType'?: (keyof typeof _room_RoomTypesEnum);
-  'roomUsers': (_room_RoomUsersOutput)[];
+  'roomUsers': (_room_RoomUserOutput)[];
   'createdByUserId': (string);
   'createdAt': (string);
   'updatedAt': (string);
