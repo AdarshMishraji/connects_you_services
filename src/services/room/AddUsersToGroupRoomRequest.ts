@@ -5,11 +5,11 @@ import type { AddUsersToGroupRoomRequestRoomUsers as _room_AddUsersToGroupRoomRe
 export interface AddUsersToGroupRoomRequest {
   'roomId'?: (string);
   'roomUsers'?: (_room_AddUsersToGroupRoomRequestRoomUsers)[];
-  'creatorUserId'?: (string);
+  'adminUserId'?: (string);
 }
 
 export interface AddUsersToGroupRoomRequestOutput {
   'roomId': (string);
   'roomUsers': (_room_AddUsersToGroupRoomRequestRoomUsersOutput)[];
-  'creatorUserId': (string);
+  'adminUserId': (string);
 }

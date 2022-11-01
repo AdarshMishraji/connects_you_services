@@ -19,6 +19,8 @@ export interface ProtoGrpcType {
     FetchUserRoomsResponse: MessageTypeDefinition
     FindOrCreateDuetRoomRequest: MessageTypeDefinition
     FindOrCreateDuetRoomResponse: MessageTypeDefinition
+    RemoveUsersFromGroupRoomRequest: MessageTypeDefinition
+    RemoveUsersFromGroupRoomResponse: MessageTypeDefinition
     ResponseStatusEnum: EnumTypeDefinition
     Room: MessageTypeDefinition
     RoomData: MessageTypeDefinition
@@ -26,6 +28,8 @@ export interface ProtoGrpcType {
     RoomTypesEnum: EnumTypeDefinition
     RoomUser: MessageTypeDefinition
     RoomUserRoleEnum: EnumTypeDefinition
+    UpdateGroupRoomDetailsRequest: MessageTypeDefinition
+    UpdateGroupRoomDetailsResponse: MessageTypeDefinition
     UpdateUserRoleInGroupRoomRequest: MessageTypeDefinition
     UpdateUserRoleInGroupRoomResponse: MessageTypeDefinition
   }

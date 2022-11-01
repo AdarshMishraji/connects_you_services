@@ -6,12 +6,12 @@ export interface UpdateUserRoleInGroupRoomRequest {
   'roomId'?: (string);
   'userId'?: (string);
   'userRole'?: (_room_RoomUserRoleEnum | keyof typeof _room_RoomUserRoleEnum);
-  'creatorUserId'?: (string);
+  'adminUserId'?: (string);
 }
 
 export interface UpdateUserRoleInGroupRoomRequestOutput {
   'roomId': (string);
   'userId': (string);
   'userRole': (keyof typeof _room_RoomUserRoleEnum);
-  'creatorUserId': (string);
+  'adminUserId': (string);
 }

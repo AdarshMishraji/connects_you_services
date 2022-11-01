@@ -10,6 +10,10 @@ import type { FetchUserRoomsRequest as _room_FetchUserRoomsRequest, FetchUserRoo
 import type { FetchUserRoomsResponse as _room_FetchUserRoomsResponse, FetchUserRoomsResponseOutput as _room_FetchUserRoomsResponseOutput } from '../room/FetchUserRoomsResponse';
 import type { FindOrCreateDuetRoomRequest as _room_FindOrCreateDuetRoomRequest, FindOrCreateDuetRoomRequestOutput as _room_FindOrCreateDuetRoomRequestOutput } from '../room/FindOrCreateDuetRoomRequest';
 import type { FindOrCreateDuetRoomResponse as _room_FindOrCreateDuetRoomResponse, FindOrCreateDuetRoomResponseOutput as _room_FindOrCreateDuetRoomResponseOutput } from '../room/FindOrCreateDuetRoomResponse';
+import type { RemoveUsersFromGroupRoomRequest as _room_RemoveUsersFromGroupRoomRequest, RemoveUsersFromGroupRoomRequestOutput as _room_RemoveUsersFromGroupRoomRequestOutput } from '../room/RemoveUsersFromGroupRoomRequest';
+import type { RemoveUsersFromGroupRoomResponse as _room_RemoveUsersFromGroupRoomResponse, RemoveUsersFromGroupRoomResponseOutput as _room_RemoveUsersFromGroupRoomResponseOutput } from '../room/RemoveUsersFromGroupRoomResponse';
+import type { UpdateGroupRoomDetailsRequest as _room_UpdateGroupRoomDetailsRequest, UpdateGroupRoomDetailsRequestOutput as _room_UpdateGroupRoomDetailsRequestOutput } from '../room/UpdateGroupRoomDetailsRequest';
+import type { UpdateGroupRoomDetailsResponse as _room_UpdateGroupRoomDetailsResponse, UpdateGroupRoomDetailsResponseOutput as _room_UpdateGroupRoomDetailsResponseOutput } from '../room/UpdateGroupRoomDetailsResponse';
 import type { UpdateUserRoleInGroupRoomRequest as _room_UpdateUserRoleInGroupRoomRequest, UpdateUserRoleInGroupRoomRequestOutput as _room_UpdateUserRoleInGroupRoomRequestOutput } from '../room/UpdateUserRoleInGroupRoomRequest';
 import type { UpdateUserRoleInGroupRoomResponse as _room_UpdateUserRoleInGroupRoomResponse, UpdateUserRoleInGroupRoomResponseOutput as _room_UpdateUserRoleInGroupRoomResponseOutput } from '../room/UpdateUserRoleInGroupRoomResponse';
 
@@ -50,6 +54,24 @@ export interface RoomServicesClient extends grpc.Client {
   findOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
   findOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
   
+  RemoveUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  RemoveUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  RemoveUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  RemoveUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  removeUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  removeUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  removeUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  removeUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
+  
+  UpdateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  UpdateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  UpdateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  UpdateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  updateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  updateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  updateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  updateGroupRoomDetails(argument: _room_UpdateGroupRoomDetailsRequest, callback: grpc.requestCallback<_room_UpdateGroupRoomDetailsResponseOutput>): grpc.ClientUnaryCall;
+  
   UpdateUserRoleInGroupRoom(argument: _room_UpdateUserRoleInGroupRoomRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_UpdateUserRoleInGroupRoomResponseOutput>): grpc.ClientUnaryCall;
   UpdateUserRoleInGroupRoom(argument: _room_UpdateUserRoleInGroupRoomRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_UpdateUserRoleInGroupRoomResponseOutput>): grpc.ClientUnaryCall;
   UpdateUserRoleInGroupRoom(argument: _room_UpdateUserRoleInGroupRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_UpdateUserRoleInGroupRoomResponseOutput>): grpc.ClientUnaryCall;
@@ -70,6 +92,10 @@ export interface RoomServicesHandlers extends grpc.UntypedServiceImplementation 
   
   FindOrCreateDuetRoom: grpc.handleUnaryCall<_room_FindOrCreateDuetRoomRequestOutput, _room_FindOrCreateDuetRoomResponse>;
   
+  RemoveUsersFromGroupRoom: grpc.handleUnaryCall<_room_RemoveUsersFromGroupRoomRequestOutput, _room_RemoveUsersFromGroupRoomResponse>;
+  
+  UpdateGroupRoomDetails: grpc.handleUnaryCall<_room_UpdateGroupRoomDetailsRequestOutput, _room_UpdateGroupRoomDetailsResponse>;
+  
   UpdateUserRoleInGroupRoom: grpc.handleUnaryCall<_room_UpdateUserRoleInGroupRoomRequestOutput, _room_UpdateUserRoleInGroupRoomResponse>;
   
 }
@@ -79,5 +105,7 @@ export interface RoomServicesDefinition extends grpc.ServiceDefinition {
   CreateGroupRoom: MethodDefinition<_room_CreateGroupRoomRequest, _room_CreateGroupRoomResponse, _room_CreateGroupRoomRequestOutput, _room_CreateGroupRoomResponseOutput>
   FetchUserRooms: MethodDefinition<_room_FetchUserRoomsRequest, _room_FetchUserRoomsResponse, _room_FetchUserRoomsRequestOutput, _room_FetchUserRoomsResponseOutput>
   FindOrCreateDuetRoom: MethodDefinition<_room_FindOrCreateDuetRoomRequest, _room_FindOrCreateDuetRoomResponse, _room_FindOrCreateDuetRoomRequestOutput, _room_FindOrCreateDuetRoomResponseOutput>
+  RemoveUsersFromGroupRoom: MethodDefinition<_room_RemoveUsersFromGroupRoomRequest, _room_RemoveUsersFromGroupRoomResponse, _room_RemoveUsersFromGroupRoomRequestOutput, _room_RemoveUsersFromGroupRoomResponseOutput>
+  UpdateGroupRoomDetails: MethodDefinition<_room_UpdateGroupRoomDetailsRequest, _room_UpdateGroupRoomDetailsResponse, _room_UpdateGroupRoomDetailsRequestOutput, _room_UpdateGroupRoomDetailsResponseOutput>
   UpdateUserRoleInGroupRoom: MethodDefinition<_room_UpdateUserRoleInGroupRoomRequest, _room_UpdateUserRoleInGroupRoomResponse, _room_UpdateUserRoleInGroupRoomRequestOutput, _room_UpdateUserRoleInGroupRoomResponseOutput>
 }

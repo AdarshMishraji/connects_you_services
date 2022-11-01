@@ -34,7 +34,9 @@ service RoomServices {
 
 	rpc CreateGroupRoom (CreateGroupRoomRequest) returns (CreateGroupRoomResponse) {}
 	rpc AddUsersToGroupRoom (AddUsersToGroupRoomRequest) returns (AddUsersToGroupRoomResponse) {}
+	rpc RemoveUsersFromGroupRoom (RemoveUsersFromGroupRoomRequest) returns (RemoveUsersFromGroupRoomResponse) {}
 	rpc UpdateUserRoleInGroupRoom (UpdateUserRoleInGroupRoomRequest) returns (UpdateUserRoleInGroupRoomResponse) {}
+	rpc UpdateGroupRoomDetails (UpdateGroupRoomDetailsRequest) returns (UpdateGroupRoomDetailsResponse) {}
 
 	rpc FetchUserRooms (FetchUserRoomsRequest) returns (FetchUserRoomsResponse) {}
 }
@@ -104,7 +106,7 @@ message AddUsersToGroupRoomRequestRoomUsers {
 message AddUsersToGroupRoomRequest {
 	string roomId = 0;
 	repeated AddUsersToGroupRoomRequestRoomUsers roomUsers = 1;
-	string creatorUserId = 2;
+	string adminUserId = 2;
 }
 
 message AddUsersToGroupRoomResponse {
@@ -118,7 +120,7 @@ message UpdateUserRoleInGroupRoomRequest {
 	string roomId = 0;
 	string userId = 1;
 	RoomUserRoleEnum userRole = 2;
-	string creatorUserId = 3;
+	string adminUserId = 3;
 }
 
 message UpdateUserRoleInGroupRoomResponse {
@@ -146,3 +148,30 @@ message FetchUserRoomsResponse {
 	FetchUserRoomsData data = 1;
 }
 // *************** FETCH_USER_ROOMS Types ***************
+
+
+// *************** REMOVE_USERS_FROM_GROUP_ROOM Types ***************
+message RemoveUsersFromGroupRoomRequest {
+	string roomId = 0;
+	repeated string userIds = 1;
+	string adminUserId = 2;
+}
+
+message RemoveUsersFromGroupRoomResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** REMOVE_USERS_FROM_GROUP_ROOM Types ***************
+
+
+// *************** UPDATE_GROUP_ROOM_DATA Types ***************
+message UpdateGroupRoomDetailsRequest {
+	string roomId = 0;
+	optional string roomName = 1;
+	optional string roomLogoUrl = 2;
+	optional string roomDescription = 3;
+}
+
+message UpdateGroupRoomDetailsResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** UPDATE_GROUP_ROOM_DATA Types ***************
