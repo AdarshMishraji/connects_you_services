@@ -14,11 +14,14 @@ export interface ProtoGrpcType {
     AddUsersToGroupRoomResponse: MessageTypeDefinition
     CreateGroupRoomRequest: MessageTypeDefinition
     CreateGroupRoomResponse: MessageTypeDefinition
-    FetchUserRoomsData: MessageTypeDefinition
-    FetchUserRoomsRequest: MessageTypeDefinition
-    FetchUserRoomsResponse: MessageTypeDefinition
     FindOrCreateDuetRoomRequest: MessageTypeDefinition
     FindOrCreateDuetRoomResponse: MessageTypeDefinition
+    GetRoomUsersRequest: MessageTypeDefinition
+    GetRoomUsersResponse: MessageTypeDefinition
+    GetRoomUsersResponseData: MessageTypeDefinition
+    GetUserRoomsData: MessageTypeDefinition
+    GetUserRoomsRequest: MessageTypeDefinition
+    GetUserRoomsResponse: MessageTypeDefinition
     RemoveUsersFromGroupRoomRequest: MessageTypeDefinition
     RemoveUsersFromGroupRoomResponse: MessageTypeDefinition
     ResponseStatusEnum: EnumTypeDefinition

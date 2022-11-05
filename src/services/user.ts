@@ -9,23 +9,23 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   user: {
-    AllUsersRequest: MessageTypeDefinition
-    AllUsersResponse: MessageTypeDefinition
     ClientMetaData: MessageTypeDefinition
     GeoData: MessageTypeDefinition
+    GetAllUsersRequest: MessageTypeDefinition
+    GetAllUsersResponse: MessageTypeDefinition
+    GetUserDetailsRequest: MessageTypeDefinition
+    GetUserDetailsResponse: MessageTypeDefinition
+    GetUserDetailsResponseData: MessageTypeDefinition
+    GetUserLoginHistoryRequest: MessageTypeDefinition
+    GetUserLoginHistoryResponse: MessageTypeDefinition
+    GetUserLoginHistoryResponseData: MessageTypeDefinition
+    GetUserLoginInfoRequest: MessageTypeDefinition
+    GetUserLoginInfoResponse: MessageTypeDefinition
+    GetUserLoginInfoResponseData: MessageTypeDefinition
     RepeatedUserDetails: MessageTypeDefinition
     ResponseStatusEnum: EnumTypeDefinition
     UserDetails: MessageTypeDefinition
-    UserDetailsData: MessageTypeDefinition
-    UserDetailsRequest: MessageTypeDefinition
-    UserDetailsResponse: MessageTypeDefinition
-    UserLoginHistoryData: MessageTypeDefinition
-    UserLoginHistoryRequest: MessageTypeDefinition
-    UserLoginHistoryResponse: MessageTypeDefinition
     UserLoginInfo: MessageTypeDefinition
-    UserLoginInfoData: MessageTypeDefinition
-    UserLoginInfoRequest: MessageTypeDefinition
-    UserLoginInfoResponse: MessageTypeDefinition
     UserServices: SubtypeConstructor<typeof grpc.Client, _user_UserServicesClient> & { service: _user_UserServicesDefinition }
   }
 }

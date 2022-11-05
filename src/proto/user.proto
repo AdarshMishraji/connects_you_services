@@ -18,17 +18,11 @@ enum ResponseStatusEnum {
 // *************** Enums Types ***************
 
 service UserServices {
-  rpc GetUserDetails (UserDetailsRequest) returns (UserDetailsResponse) {}
-  rpc GetAllUsers (AllUsersRequest) returns (AllUsersResponse) {}
+  rpc GetUserDetails (GetUserDetailsRequest) returns (GetUserDetailsResponse) {}
+  rpc GetAllUsers (GetAllUsersRequest) returns (GetAllUsersResponse) {}
 
-  rpc GetUserLoginInfo (UserLoginInfoRequest) returns (UserLoginInfoResponse) {}
-  rpc GetUserLoginHistory (UserLoginHistoryRequest) returns (UserLoginHistoryResponse) {}
-}
-
-
-// *************** USER_DETAILS Types *************** //
-message UserDetailsRequest {
-  string userId = 0;
+  rpc GetUserLoginInfo (GetUserLoginInfoRequest) returns (GetUserLoginInfoResponse) {}
+  rpc GetUserLoginHistory (GetUserLoginHistoryRequest) returns (GetUserLoginHistoryResponse) {}
 }
 
 message UserDetails {
@@ -46,33 +40,38 @@ message RepeatedUserDetails {
   repeated UserDetails users = 0;
 }
 
-message UserDetailsData {
+// *************** GET_USER_DETAILS Types *************** //
+message GetUserDetailsRequest {
+  string userId = 0;
+}
+
+message GetUserDetailsResponseData {
   UserDetails user = 0;
 }
 
-message UserDetailsResponse {
+message GetUserDetailsResponse {
   ResponseStatusEnum responseStatus = 0;
-  UserDetailsData data = 1;
+  GetUserDetailsResponseData data = 1;
 }
-// *************** USER_DETAILS Types *************** //
+// *************** GET_USER_DETAILS Types *************** //
 
 
-// *************** ALL_USERS Types *************** //
-message AllUsersRequest {
+// *************** GET_ALL_USERS Types *************** //
+message GetAllUsersRequest {
 	optional int32 limit = 0;
 	optional int32 offset = 1;
   optional string exceptUserId = 3;
 }
 
-message AllUsersResponse {
+message GetAllUsersResponse {
   ResponseStatusEnum responseStatus = 0;
   RepeatedUserDetails data = 1;
 }
-// *************** ALL_USERS Types *************** //
+// *************** GET_ALL_USERS Types *************** //
 
 
-// *************** USER_LOGIN_INFO Types *************** //
-message UserLoginInfoRequest {
+// *************** GET_USER_LOGIN_INFO Types *************** //
+message GetUserLoginInfoRequest {
   string userId = 0;
   string loginId = 1;
 }
@@ -118,32 +117,32 @@ message UserLoginInfo {
   string createdAt = 4;
 }
 
-message UserLoginInfoData {
+message GetUserLoginInfoResponseData {
   UserLoginInfo userLoginInfo = 0;
 }
 
-message UserLoginInfoResponse {
+message GetUserLoginInfoResponse {
   ResponseStatusEnum responseStatus = 0;
-  UserLoginInfoData data = 1;
+  GetUserLoginInfoResponseData data = 1;
 }
-// *************** USER_LOGIN_INFO Types *************** //
+// *************** GET_USER_LOGIN_INFO Types *************** //
 
 
-// *************** USER_LOGIN_HISTORY Types *************** //
-message UserLoginHistoryRequest {
+// *************** GET_USER_LOGIN_HISTORY Types *************** //
+message GetUserLoginHistoryRequest {
   string userId = 0;
   optional int32 limit = 1;
   optional int32 offset = 2;
 	optional bool nonValidAllowed = 3;
 }
 
-message UserLoginHistoryData {
+message GetUserLoginHistoryResponseData {
   repeated UserLoginInfo userLoginHistory = 0;
 	int32 total = 1;
 }
 
-message UserLoginHistoryResponse {
+message GetUserLoginHistoryResponse {
   ResponseStatusEnum responseStatus = 0;
-  UserLoginHistoryData data = 1;
+  GetUserLoginHistoryResponseData data = 1;
 }
-// *************** USER_LOGIN_HISTORY Types *************** //
+// *************** GET_USER_LOGIN_HISTORY Types *************** //

@@ -37,8 +37,9 @@ service RoomServices {
 	rpc RemoveUsersFromGroupRoom (RemoveUsersFromGroupRoomRequest) returns (RemoveUsersFromGroupRoomResponse) {}
 	rpc UpdateUserRoleInGroupRoom (UpdateUserRoleInGroupRoomRequest) returns (UpdateUserRoleInGroupRoomResponse) {}
 	rpc UpdateGroupRoomDetails (UpdateGroupRoomDetailsRequest) returns (UpdateGroupRoomDetailsResponse) {}
-
-	rpc FetchUserRooms (FetchUserRoomsRequest) returns (FetchUserRoomsResponse) {}
+	
+	rpc GetRoomUsers (GetRoomUsersRequest) returns (GetRoomUsersResponse) {}
+	rpc GetUserRooms (GetUserRoomsRequest) returns (GetUserRoomsResponse) {}
 }
 
 message RoomUser {
@@ -130,7 +131,7 @@ message UpdateUserRoleInGroupRoomResponse {
 
 
 // *************** FETCH_USER_ROOMS Types ***************
-message FetchUserRoomsRequest {
+message GetUserRoomsRequest {
 	string userId = 0;
 	optional string timestamp = 1;
 	optional int32 limit = 2;
@@ -139,13 +140,13 @@ message FetchUserRoomsRequest {
 	optional bool requiredDetailedRoomUserData = 5;
 }
 
-message FetchUserRoomsData {
+message GetUserRoomsData {
 	repeated Room rooms = 0;
 }
 
-message FetchUserRoomsResponse {
+message GetUserRoomsResponse {
 	ResponseStatusEnum status = 0;
-	FetchUserRoomsData data = 1;
+	GetUserRoomsData data = 1;
 }
 // *************** FETCH_USER_ROOMS Types ***************
 
@@ -175,3 +176,19 @@ message UpdateGroupRoomDetailsResponse {
 	ResponseStatusEnum status = 0;
 }
 // *************** UPDATE_GROUP_ROOM_DATA Types ***************
+
+
+// *************** GET_ROOM_USERS Types ***************
+message GetRoomUsersRequest {
+	string roomId = 0;
+}
+
+message GetRoomUsersResponseData {
+	repeated RoomUser roomUsers = 1;
+}
+
+message GetRoomUsersResponse {
+	ResponseStatusEnum status = 0;
+	GetRoomUsersResponseData data = 1;
+}
+// *************** GET_ROOM_USERS Types ***************

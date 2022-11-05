@@ -2,12 +2,12 @@
 
 import type { UserLoginInfo as _user_UserLoginInfo, UserLoginInfoOutput as _user_UserLoginInfoOutput } from '../user/UserLoginInfo';
 
-export interface UserLoginHistoryData {
+export interface GetUserLoginHistoryResponseData {
   'userLoginHistory'?: (_user_UserLoginInfo)[];
   'total'?: (number);
 }
 
-export interface UserLoginHistoryDataOutput {
+export interface GetUserLoginHistoryResponseDataOutput {
   'userLoginHistory': (_user_UserLoginInfoOutput)[];
   'total': (number);
 }

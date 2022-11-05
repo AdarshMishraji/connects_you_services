@@ -1,7 +1,7 @@
 // Original file: src/proto/user.proto
 
 
-export interface UserLoginHistoryRequest {
+export interface GetUserLoginHistoryRequest {
   'userId'?: (string);
   'limit'?: (number);
   'offset'?: (number);
@@ -11,7 +11,7 @@ export interface UserLoginHistoryRequest {
   '_nonValidAllowed'?: "nonValidAllowed";
 }
 
-export interface UserLoginHistoryRequestOutput {
+export interface GetUserLoginHistoryRequestOutput {
   'userId': (string);
   'limit'?: (number);
   'offset'?: (number);

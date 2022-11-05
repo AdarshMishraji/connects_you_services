@@ -2,10 +2,10 @@
 
 import type { UserLoginInfo as _user_UserLoginInfo, UserLoginInfoOutput as _user_UserLoginInfoOutput } from '../user/UserLoginInfo';
 
-export interface UserLoginInfoData {
+export interface GetUserLoginInfoResponseData {
   'userLoginInfo'?: (_user_UserLoginInfo | null);
 }
 
-export interface UserLoginInfoDataOutput {
+export interface GetUserLoginInfoResponseDataOutput {
   'userLoginInfo': (_user_UserLoginInfoOutput | null);
 }

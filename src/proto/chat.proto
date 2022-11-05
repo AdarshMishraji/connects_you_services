@@ -1,0 +1,231 @@
+syntax = "proto3";
+
+package chat;
+
+// *************** Enums Types *************** 
+enum ResponseStatusEnum {
+	SUCCESS = 0;
+	PARTIAL_DATA = 1;
+	NO_DATA_ERROR = 2;
+	BAD_REQUEST_ERROR = 3;
+	UNAUTHORIZED_ERROR = 4;
+	FORBIDDEN_ERROR = 5;
+	NOT_FOUND_ERROR = 6;
+	NOT_ACCEPTED_ERROR = 7;
+	ALREADY_EXISTS_ERROR = 8;
+	INTERNAL_SERVER_ERROR = 9;
+}
+
+enum MessageTypeEnum {
+	TEXT = 0;
+	IMAGE = 1;
+	VIDEO = 2;
+	DOC = 3;
+	PPT = 4;
+	TXT = 5;
+	XLS = 6;
+	OTHER = 7;
+}
+// *************** Enums Types *************** 
+
+service ChatServices {
+	rpc InsertMessage (InsertMessageRequest) returns (InsertMessageResponse) {}
+	rpc GetRoomMessages (GetRoomMessagesRequest) returns (GetRoomMessagesResponse) {}
+	rpc RemoveMessages (RemoveMessagesRequest) returns (RemoveMessagesResponse) {}
+	rpc EditMessage (EditMessageRequest) returns (EditMessageResponse) {}
+	rpc GetUserMessages (GetUserMessagesRequest) returns (GetUserMessagesResponse) {}
+	rpc InsertMessageSeenInfoForMessage (InsertMessageSeenInfoForMessageRequest) returns (InsertMessageSeenInfoForMessageResponse) {}
+	rpc CreateMessageThread (CreateMessageThreadRequest) returns (CreateMessageThreadResponse) {}
+	rpc GetThreadMessages (GetThreadMessagesRequest) returns (GetThreadMessagesResponse) {}
+	rpc GetRoomThreads (GetRoomThreadsRequest) returns (GetRoomThreadsResponse) {}  
+	rpc DeleteRoomThread (DeleteRoomThreadRequest) returns (DeleteRoomThreadResponse) {}  
+}
+
+message Emotion {
+	string emotionString = 0;
+	string emotionSendByUserId = 1;
+	string emotionSendAt = 2;
+}
+
+message MessageSeenInfo {
+	string seenByUserId = 0;
+	string seenAt = 1;
+}
+
+message Message {
+	string messageText = 0;
+	MessageTypeEnum messageType = 1;
+	string roomId = 2;
+	string senderUserId = 3;
+	optional string receiverIserId = 4;
+  repeated Emotion emotionList = 5;
+	optional bool isDeleted = 6;
+	optional string replyToMessageId = 7;
+	optional string haveThreadId = 8;
+	optional string belongsToThreadId = 9;
+	repeated MessageSeenInfo messageSeenInfo = 10;
+}
+
+message Thread {
+	string threadId = 0;
+	string roomId = 1;
+	string messageId = 2;
+}
+
+// *************** INSERT_MESSAGE Types *************** //
+message InsertMessageRequest {
+	string messageText = 0;
+	MessageTypeEnum messageType = 1;
+	string roomId = 2;
+	string  senderUserId = 3;
+	string replyToMessageId = 4;
+	optional string receiverUserId = 5;
+	optional string belongsToThreadId = 9;
+}
+
+message InsertMessageResponseData {
+	string messageId = 1;
+}
+
+message InsertMessageResponse {
+	ResponseStatusEnum status = 0;
+	InsertMessageResponseData data = 1;
+}
+// *************** INSERT_MESSAGE Types *************** //
+
+
+// *************** GET_ROOM_MESSAGES Types *************** //
+message GetRoomMessagesRequest {
+	string roomId = 0;
+	int32 limit = 1;
+	int32 offset = 2;
+}
+
+message GetRoomMessagesResponseData {
+	repeated Message messages = 1;
+}
+
+message GetRoomMessagesResponse {
+	ResponseStatusEnum status = 0;
+	GetRoomMessagesResponseData data = 1;
+}
+// *************** GET_ROOM_MESSAGES Types *************** //
+
+
+// *************** REMOVE_MESSAGES Types *************** //
+message RemoveMessagesRequest {
+	repeated string messageIds = 0;
+}
+
+message RemoveMessagesResponseData {
+	repeated string messageIds = 1;
+}
+
+message RemoveMessagesResponse {
+	ResponseStatusEnum status = 0;
+	RemoveMessagesResponseData data = 1;
+}
+// *************** REMOVE_MESSAGES Types *************** //
+
+
+// *************** EDIT_MESSAGE Types *************** //
+message EditMessageRequest {
+	string messageId = 0;
+	string messageText = 1;
+}
+
+message EditMessageResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** EDIT_MESSAGE Types *************** //
+
+
+// *************** GET_USER_MESSAGES Types *************** //
+message GetUserMessagesRequest {
+	string userId = 0;
+	int32 limit = 1;
+	int32 offset = 2;
+}
+
+message GetUserMessagesResponseData {
+	repeated Message messages = 1;
+}
+
+message GetUserMessagesResponse {
+	ResponseStatusEnum status = 0;
+	GetUserMessagesResponseData data = 1;
+}
+// *************** GET_USER_MESSAGES Types *************** //
+
+
+// *************** INSERT_MESSAGE_SEEN_INFO_FOR_MESSAGE Types *************** //
+message InsertMessageSeenInfoForMessageRequest {
+	string messageId = 0;
+	string seenByUserId = 1;
+}
+
+message InsertMessageSeenInfoForMessageResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** INSERT_MESSAGE_SEEN_INFO_FOR_MESSAGE Types *************** //
+
+
+// *************** CREATE_MESSAGE_THREAD Types *************** //
+message CreateMessageThreadRequest {
+	string roomId = 0;
+	string messageId = 1;
+}
+
+message CreateMessageThreadResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** CREATE_MESSAGE_THREAD Types *************** //
+
+
+// *************** GET_THREAD_MESSAGES Types *************** //
+message GetThreadMessagesRequest {
+	string threadId = 0;
+	int32 limit = 1;
+	int32 offset = 2;
+}
+
+message GetThreadMessagesResponseData {
+	repeated Message messages = 1;
+}
+
+message GetThreadMessagesResponse {
+	ResponseStatusEnum status = 0;
+	GetThreadMessagesResponseData data = 1;
+}
+// *************** GET_THREAD_MESSAGES Types *************** //
+
+
+// *************** GET_ROOM_THREADS Types *************** //
+message GetRoomThreadsRequest {
+	string roomId = 0;
+	int32 limit = 1;
+	int32 offset = 2;
+}
+
+message GetRoomThreadsResponseData {
+	repeated Thread threads = 1;
+}
+
+message GetRoomThreadsResponse {
+	ResponseStatusEnum status = 0;
+	GetRoomThreadsResponseData data = 1;
+}
+// *************** GET_ROOM_THREADS Types *************** //
+
+
+// *************** DELETE_ROOM_THREAD Types *************** //
+message DeleteRoomThreadRequest {
+	string threadId = 0;
+	string roomId = 1;
+	string messageId = 2;
+}
+
+message DeleteRoomThreadResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** DELETE_ROOM_THREAD Types *************** //

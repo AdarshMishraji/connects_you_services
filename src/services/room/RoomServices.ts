@@ -6,10 +6,12 @@ import type { AddUsersToGroupRoomRequest as _room_AddUsersToGroupRoomRequest, Ad
 import type { AddUsersToGroupRoomResponse as _room_AddUsersToGroupRoomResponse, AddUsersToGroupRoomResponseOutput as _room_AddUsersToGroupRoomResponseOutput } from '../room/AddUsersToGroupRoomResponse';
 import type { CreateGroupRoomRequest as _room_CreateGroupRoomRequest, CreateGroupRoomRequestOutput as _room_CreateGroupRoomRequestOutput } from '../room/CreateGroupRoomRequest';
 import type { CreateGroupRoomResponse as _room_CreateGroupRoomResponse, CreateGroupRoomResponseOutput as _room_CreateGroupRoomResponseOutput } from '../room/CreateGroupRoomResponse';
-import type { FetchUserRoomsRequest as _room_FetchUserRoomsRequest, FetchUserRoomsRequestOutput as _room_FetchUserRoomsRequestOutput } from '../room/FetchUserRoomsRequest';
-import type { FetchUserRoomsResponse as _room_FetchUserRoomsResponse, FetchUserRoomsResponseOutput as _room_FetchUserRoomsResponseOutput } from '../room/FetchUserRoomsResponse';
 import type { FindOrCreateDuetRoomRequest as _room_FindOrCreateDuetRoomRequest, FindOrCreateDuetRoomRequestOutput as _room_FindOrCreateDuetRoomRequestOutput } from '../room/FindOrCreateDuetRoomRequest';
 import type { FindOrCreateDuetRoomResponse as _room_FindOrCreateDuetRoomResponse, FindOrCreateDuetRoomResponseOutput as _room_FindOrCreateDuetRoomResponseOutput } from '../room/FindOrCreateDuetRoomResponse';
+import type { GetRoomUsersRequest as _room_GetRoomUsersRequest, GetRoomUsersRequestOutput as _room_GetRoomUsersRequestOutput } from '../room/GetRoomUsersRequest';
+import type { GetRoomUsersResponse as _room_GetRoomUsersResponse, GetRoomUsersResponseOutput as _room_GetRoomUsersResponseOutput } from '../room/GetRoomUsersResponse';
+import type { GetUserRoomsRequest as _room_GetUserRoomsRequest, GetUserRoomsRequestOutput as _room_GetUserRoomsRequestOutput } from '../room/GetUserRoomsRequest';
+import type { GetUserRoomsResponse as _room_GetUserRoomsResponse, GetUserRoomsResponseOutput as _room_GetUserRoomsResponseOutput } from '../room/GetUserRoomsResponse';
 import type { RemoveUsersFromGroupRoomRequest as _room_RemoveUsersFromGroupRoomRequest, RemoveUsersFromGroupRoomRequestOutput as _room_RemoveUsersFromGroupRoomRequestOutput } from '../room/RemoveUsersFromGroupRoomRequest';
 import type { RemoveUsersFromGroupRoomResponse as _room_RemoveUsersFromGroupRoomResponse, RemoveUsersFromGroupRoomResponseOutput as _room_RemoveUsersFromGroupRoomResponseOutput } from '../room/RemoveUsersFromGroupRoomResponse';
 import type { UpdateGroupRoomDetailsRequest as _room_UpdateGroupRoomDetailsRequest, UpdateGroupRoomDetailsRequestOutput as _room_UpdateGroupRoomDetailsRequestOutput } from '../room/UpdateGroupRoomDetailsRequest';
@@ -36,15 +38,6 @@ export interface RoomServicesClient extends grpc.Client {
   createGroupRoom(argument: _room_CreateGroupRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_CreateGroupRoomResponseOutput>): grpc.ClientUnaryCall;
   createGroupRoom(argument: _room_CreateGroupRoomRequest, callback: grpc.requestCallback<_room_CreateGroupRoomResponseOutput>): grpc.ClientUnaryCall;
   
-  FetchUserRooms(argument: _room_FetchUserRoomsRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  FetchUserRooms(argument: _room_FetchUserRoomsRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  FetchUserRooms(argument: _room_FetchUserRoomsRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  FetchUserRooms(argument: _room_FetchUserRoomsRequest, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  fetchUserRooms(argument: _room_FetchUserRoomsRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  fetchUserRooms(argument: _room_FetchUserRoomsRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  fetchUserRooms(argument: _room_FetchUserRoomsRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  fetchUserRooms(argument: _room_FetchUserRoomsRequest, callback: grpc.requestCallback<_room_FetchUserRoomsResponseOutput>): grpc.ClientUnaryCall;
-  
   FindOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
   FindOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
   FindOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
@@ -53,6 +46,24 @@ export interface RoomServicesClient extends grpc.Client {
   findOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
   findOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
   findOrCreateDuetRoom(argument: _room_FindOrCreateDuetRoomRequest, callback: grpc.requestCallback<_room_FindOrCreateDuetRoomResponseOutput>): grpc.ClientUnaryCall;
+  
+  GetRoomUsers(argument: _room_GetRoomUsersRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  GetRoomUsers(argument: _room_GetRoomUsersRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  GetRoomUsers(argument: _room_GetRoomUsersRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  GetRoomUsers(argument: _room_GetRoomUsersRequest, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  getRoomUsers(argument: _room_GetRoomUsersRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  getRoomUsers(argument: _room_GetRoomUsersRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  getRoomUsers(argument: _room_GetRoomUsersRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  getRoomUsers(argument: _room_GetRoomUsersRequest, callback: grpc.requestCallback<_room_GetRoomUsersResponseOutput>): grpc.ClientUnaryCall;
+  
+  GetUserRooms(argument: _room_GetUserRoomsRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  GetUserRooms(argument: _room_GetUserRoomsRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  GetUserRooms(argument: _room_GetUserRoomsRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  GetUserRooms(argument: _room_GetUserRoomsRequest, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  getUserRooms(argument: _room_GetUserRoomsRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  getUserRooms(argument: _room_GetUserRoomsRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  getUserRooms(argument: _room_GetUserRoomsRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
+  getUserRooms(argument: _room_GetUserRoomsRequest, callback: grpc.requestCallback<_room_GetUserRoomsResponseOutput>): grpc.ClientUnaryCall;
   
   RemoveUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
   RemoveUsersFromGroupRoom(argument: _room_RemoveUsersFromGroupRoomRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_room_RemoveUsersFromGroupRoomResponseOutput>): grpc.ClientUnaryCall;
@@ -88,9 +99,11 @@ export interface RoomServicesHandlers extends grpc.UntypedServiceImplementation 
   
   CreateGroupRoom: grpc.handleUnaryCall<_room_CreateGroupRoomRequestOutput, _room_CreateGroupRoomResponse>;
   
-  FetchUserRooms: grpc.handleUnaryCall<_room_FetchUserRoomsRequestOutput, _room_FetchUserRoomsResponse>;
-  
   FindOrCreateDuetRoom: grpc.handleUnaryCall<_room_FindOrCreateDuetRoomRequestOutput, _room_FindOrCreateDuetRoomResponse>;
+  
+  GetRoomUsers: grpc.handleUnaryCall<_room_GetRoomUsersRequestOutput, _room_GetRoomUsersResponse>;
+  
+  GetUserRooms: grpc.handleUnaryCall<_room_GetUserRoomsRequestOutput, _room_GetUserRoomsResponse>;
   
   RemoveUsersFromGroupRoom: grpc.handleUnaryCall<_room_RemoveUsersFromGroupRoomRequestOutput, _room_RemoveUsersFromGroupRoomResponse>;
   
@@ -103,8 +116,9 @@ export interface RoomServicesHandlers extends grpc.UntypedServiceImplementation 
 export interface RoomServicesDefinition extends grpc.ServiceDefinition {
   AddUsersToGroupRoom: MethodDefinition<_room_AddUsersToGroupRoomRequest, _room_AddUsersToGroupRoomResponse, _room_AddUsersToGroupRoomRequestOutput, _room_AddUsersToGroupRoomResponseOutput>
   CreateGroupRoom: MethodDefinition<_room_CreateGroupRoomRequest, _room_CreateGroupRoomResponse, _room_CreateGroupRoomRequestOutput, _room_CreateGroupRoomResponseOutput>
-  FetchUserRooms: MethodDefinition<_room_FetchUserRoomsRequest, _room_FetchUserRoomsResponse, _room_FetchUserRoomsRequestOutput, _room_FetchUserRoomsResponseOutput>
   FindOrCreateDuetRoom: MethodDefinition<_room_FindOrCreateDuetRoomRequest, _room_FindOrCreateDuetRoomResponse, _room_FindOrCreateDuetRoomRequestOutput, _room_FindOrCreateDuetRoomResponseOutput>
+  GetRoomUsers: MethodDefinition<_room_GetRoomUsersRequest, _room_GetRoomUsersResponse, _room_GetRoomUsersRequestOutput, _room_GetRoomUsersResponseOutput>
+  GetUserRooms: MethodDefinition<_room_GetUserRoomsRequest, _room_GetUserRoomsResponse, _room_GetUserRoomsRequestOutput, _room_GetUserRoomsResponseOutput>
   RemoveUsersFromGroupRoom: MethodDefinition<_room_RemoveUsersFromGroupRoomRequest, _room_RemoveUsersFromGroupRoomResponse, _room_RemoveUsersFromGroupRoomRequestOutput, _room_RemoveUsersFromGroupRoomResponseOutput>
   UpdateGroupRoomDetails: MethodDefinition<_room_UpdateGroupRoomDetailsRequest, _room_UpdateGroupRoomDetailsResponse, _room_UpdateGroupRoomDetailsRequestOutput, _room_UpdateGroupRoomDetailsResponseOutput>
   UpdateUserRoleInGroupRoom: MethodDefinition<_room_UpdateUserRoleInGroupRoomRequest, _room_UpdateUserRoleInGroupRoomResponse, _room_UpdateUserRoleInGroupRoomRequestOutput, _room_UpdateUserRoleInGroupRoomResponseOutput>

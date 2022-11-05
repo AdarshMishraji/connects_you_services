@@ -1,7 +1,7 @@
 // Original file: src/proto/user.proto
 
 
-export interface AllUsersRequest {
+export interface GetAllUsersRequest {
   'limit'?: (number);
   'offset'?: (number);
   'exceptUserId'?: (string);
@@ -10,7 +10,7 @@ export interface AllUsersRequest {
   '_exceptUserId'?: "exceptUserId";
 }
 
-export interface AllUsersRequestOutput {
+export interface GetAllUsersRequestOutput {
   'limit'?: (number);
   'offset'?: (number);
   'exceptUserId'?: (string);

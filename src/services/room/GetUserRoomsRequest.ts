@@ -1,7 +1,7 @@
 // Original file: src/proto/room.proto
 
 
-export interface FetchUserRoomsRequest {
+export interface GetUserRoomsRequest {
   'userId'?: (string);
   'timestamp'?: (string);
   'limit'?: (number);
@@ -15,7 +15,7 @@ export interface FetchUserRoomsRequest {
   '_requiredDetailedRoomUserData'?: "requiredDetailedRoomUserData";
 }
 
-export interface FetchUserRoomsRequestOutput {
+export interface GetUserRoomsRequestOutput {
   'userId': (string);
   'timestamp'?: (string);
   'limit'?: (number);

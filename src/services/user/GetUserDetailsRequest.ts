@@ -1,10 +1,10 @@
 // Original file: src/proto/user.proto
 
 
-export interface UserDetailsRequest {
+export interface GetUserDetailsRequest {
   'userId'?: (string);
 }
 
-export interface UserDetailsRequestOutput {
+export interface GetUserDetailsRequestOutput {
   'userId': (string);
 }

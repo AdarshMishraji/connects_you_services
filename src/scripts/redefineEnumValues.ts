@@ -31,7 +31,6 @@ const redefineEnumValues = async (pathOfServices: string) => {
           fileContent += line + '\n';
         }
       }
-      console.log(file.name, '\n' + fileContent);
       fs.writeFileSync(pathOfFile, fileContent);
     }
   }
