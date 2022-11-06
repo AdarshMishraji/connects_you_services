@@ -2,10 +2,10 @@
 
 import type { ResponseStatusEnum as _chat_ResponseStatusEnum } from '../chat/ResponseStatusEnum';
 
-export interface InsertMessageSeenInfoForMessageResponse {
+export interface InsertMessageSeenInfoForMessagesResponse {
   'status'?: (_chat_ResponseStatusEnum | keyof typeof _chat_ResponseStatusEnum);
 }
 
-export interface InsertMessageSeenInfoForMessageResponseOutput {
+export interface InsertMessageSeenInfoForMessagesResponseOutput {
   'status': (keyof typeof _chat_ResponseStatusEnum);
 }

@@ -18,8 +18,8 @@ import type { GetUserMessagesRequest as _chat_GetUserMessagesRequest, GetUserMes
 import type { GetUserMessagesResponse as _chat_GetUserMessagesResponse, GetUserMessagesResponseOutput as _chat_GetUserMessagesResponseOutput } from '../chat/GetUserMessagesResponse';
 import type { InsertMessageRequest as _chat_InsertMessageRequest, InsertMessageRequestOutput as _chat_InsertMessageRequestOutput } from '../chat/InsertMessageRequest';
 import type { InsertMessageResponse as _chat_InsertMessageResponse, InsertMessageResponseOutput as _chat_InsertMessageResponseOutput } from '../chat/InsertMessageResponse';
-import type { InsertMessageSeenInfoForMessageRequest as _chat_InsertMessageSeenInfoForMessageRequest, InsertMessageSeenInfoForMessageRequestOutput as _chat_InsertMessageSeenInfoForMessageRequestOutput } from '../chat/InsertMessageSeenInfoForMessageRequest';
-import type { InsertMessageSeenInfoForMessageResponse as _chat_InsertMessageSeenInfoForMessageResponse, InsertMessageSeenInfoForMessageResponseOutput as _chat_InsertMessageSeenInfoForMessageResponseOutput } from '../chat/InsertMessageSeenInfoForMessageResponse';
+import type { InsertMessageSeenInfoForMessagesRequest as _chat_InsertMessageSeenInfoForMessagesRequest, InsertMessageSeenInfoForMessagesRequestOutput as _chat_InsertMessageSeenInfoForMessagesRequestOutput } from '../chat/InsertMessageSeenInfoForMessagesRequest';
+import type { InsertMessageSeenInfoForMessagesResponse as _chat_InsertMessageSeenInfoForMessagesResponse, InsertMessageSeenInfoForMessagesResponseOutput as _chat_InsertMessageSeenInfoForMessagesResponseOutput } from '../chat/InsertMessageSeenInfoForMessagesResponse';
 import type { RemoveMessagesRequest as _chat_RemoveMessagesRequest, RemoveMessagesRequestOutput as _chat_RemoveMessagesRequestOutput } from '../chat/RemoveMessagesRequest';
 import type { RemoveMessagesResponse as _chat_RemoveMessagesResponse, RemoveMessagesResponseOutput as _chat_RemoveMessagesResponseOutput } from '../chat/RemoveMessagesResponse';
 
@@ -96,14 +96,14 @@ export interface ChatServicesClient extends grpc.Client {
   insertMessage(argument: _chat_InsertMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageResponseOutput>): grpc.ClientUnaryCall;
   insertMessage(argument: _chat_InsertMessageRequest, callback: grpc.requestCallback<_chat_InsertMessageResponseOutput>): grpc.ClientUnaryCall;
   
-  InsertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  InsertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  InsertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  InsertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  insertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  insertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  insertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
-  insertMessageSeenInfoForMessage(argument: _chat_InsertMessageSeenInfoForMessageRequest, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessageResponseOutput>): grpc.ClientUnaryCall;
+  InsertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  InsertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  InsertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  InsertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
   
   RemoveMessages(argument: _chat_RemoveMessagesRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_RemoveMessagesResponseOutput>): grpc.ClientUnaryCall;
   RemoveMessages(argument: _chat_RemoveMessagesRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_RemoveMessagesResponseOutput>): grpc.ClientUnaryCall;
@@ -133,7 +133,7 @@ export interface ChatServicesHandlers extends grpc.UntypedServiceImplementation 
   
   InsertMessage: grpc.handleUnaryCall<_chat_InsertMessageRequestOutput, _chat_InsertMessageResponse>;
   
-  InsertMessageSeenInfoForMessage: grpc.handleUnaryCall<_chat_InsertMessageSeenInfoForMessageRequestOutput, _chat_InsertMessageSeenInfoForMessageResponse>;
+  InsertMessageSeenInfoForMessages: grpc.handleUnaryCall<_chat_InsertMessageSeenInfoForMessagesRequestOutput, _chat_InsertMessageSeenInfoForMessagesResponse>;
   
   RemoveMessages: grpc.handleUnaryCall<_chat_RemoveMessagesRequestOutput, _chat_RemoveMessagesResponse>;
   
@@ -148,6 +148,6 @@ export interface ChatServicesDefinition extends grpc.ServiceDefinition {
   GetThreadMessages: MethodDefinition<_chat_GetThreadMessagesRequest, _chat_GetThreadMessagesResponse, _chat_GetThreadMessagesRequestOutput, _chat_GetThreadMessagesResponseOutput>
   GetUserMessages: MethodDefinition<_chat_GetUserMessagesRequest, _chat_GetUserMessagesResponse, _chat_GetUserMessagesRequestOutput, _chat_GetUserMessagesResponseOutput>
   InsertMessage: MethodDefinition<_chat_InsertMessageRequest, _chat_InsertMessageResponse, _chat_InsertMessageRequestOutput, _chat_InsertMessageResponseOutput>
-  InsertMessageSeenInfoForMessage: MethodDefinition<_chat_InsertMessageSeenInfoForMessageRequest, _chat_InsertMessageSeenInfoForMessageResponse, _chat_InsertMessageSeenInfoForMessageRequestOutput, _chat_InsertMessageSeenInfoForMessageResponseOutput>
+  InsertMessageSeenInfoForMessages: MethodDefinition<_chat_InsertMessageSeenInfoForMessagesRequest, _chat_InsertMessageSeenInfoForMessagesResponse, _chat_InsertMessageSeenInfoForMessagesRequestOutput, _chat_InsertMessageSeenInfoForMessagesResponseOutput>
   RemoveMessages: MethodDefinition<_chat_RemoveMessagesRequest, _chat_RemoveMessagesResponse, _chat_RemoveMessagesRequestOutput, _chat_RemoveMessagesResponseOutput>
 }

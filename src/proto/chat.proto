@@ -34,7 +34,7 @@ service ChatServices {
 	rpc RemoveMessages (RemoveMessagesRequest) returns (RemoveMessagesResponse) {}
 	rpc EditMessage (EditMessageRequest) returns (EditMessageResponse) {}
 	rpc GetUserMessages (GetUserMessagesRequest) returns (GetUserMessagesResponse) {}
-	rpc InsertMessageSeenInfoForMessage (InsertMessageSeenInfoForMessageRequest) returns (InsertMessageSeenInfoForMessageResponse) {}
+	rpc InsertMessageSeenInfoForMessages (InsertMessageSeenInfoForMessagesRequest) returns (InsertMessageSeenInfoForMessagesResponse) {}
 	rpc CreateMessageThread (CreateMessageThreadRequest) returns (CreateMessageThreadResponse) {}
 	rpc GetThreadMessages (GetThreadMessagesRequest) returns (GetThreadMessagesResponse) {}
 	rpc GetRoomThreads (GetRoomThreadsRequest) returns (GetRoomThreadsResponse) {}  
@@ -159,12 +159,12 @@ message GetUserMessagesResponse {
 
 
 // *************** INSERT_MESSAGE_SEEN_INFO_FOR_MESSAGE Types *************** //
-message InsertMessageSeenInfoForMessageRequest {
-	string messageId = 0;
+message InsertMessageSeenInfoForMessagesRequest {
+	repeated string messageIds = 0;
 	string seenByUserId = 1;
 }
 
-message InsertMessageSeenInfoForMessageResponse {
+message InsertMessageSeenInfoForMessagesResponse {
 	ResponseStatusEnum status = 0;
 }
 // *************** INSERT_MESSAGE_SEEN_INFO_FOR_MESSAGE Types *************** //
