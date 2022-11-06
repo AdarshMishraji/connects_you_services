@@ -53,17 +53,18 @@ message MessageSeenInfo {
 }
 
 message Message {
-	string messageText = 0;
-	MessageTypeEnum messageType = 1;
-	string roomId = 2;
-	string senderUserId = 3;
-	optional string receiverIserId = 4;
-  repeated Emotion emotionList = 5;
-	optional bool isDeleted = 6;
+	string messageId = 0;
+	string messageText = 1;
+	MessageTypeEnum messageType = 2;
+	string roomId = 3;
+	string senderUserId = 4;
+	optional string receiverUserId = 5;
+  repeated Emotion emotionList = 6;
+	optional bool isDeleted = 7;
 	optional string haveThreadId = 8;
 	optional string belongsToThreadId = 9;
 	repeated MessageSeenInfo messageSeenInfo = 10;
-	string createdAt = 11;
+	string sendAt = 11;
 	string updatedAt = 12;
 }
 
@@ -117,13 +118,8 @@ message RemoveMessagesRequest {
 	repeated string messageIds = 0;
 }
 
-message RemoveMessagesResponseData {
-	repeated string messageIds = 1;
-}
-
 message RemoveMessagesResponse {
 	ResponseStatusEnum status = 0;
-	RemoveMessagesResponseData data = 1;
 }
 // *************** REMOVE_MESSAGES Types *************** //
 

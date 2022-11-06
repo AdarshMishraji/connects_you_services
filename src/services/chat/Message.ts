@@ -5,38 +5,40 @@ import type { Emotion as _chat_Emotion, EmotionOutput as _chat_EmotionOutput } f
 import type { MessageSeenInfo as _chat_MessageSeenInfo, MessageSeenInfoOutput as _chat_MessageSeenInfoOutput } from '../chat/MessageSeenInfo';
 
 export interface Message {
+  'messageId'?: (string);
   'messageText'?: (string);
   'messageType'?: (_chat_MessageTypeEnum | keyof typeof _chat_MessageTypeEnum);
   'roomId'?: (string);
   'senderUserId'?: (string);
-  'receiverIserId'?: (string);
+  'receiverUserId'?: (string);
   'emotionList'?: (_chat_Emotion)[];
   'isDeleted'?: (boolean);
   'haveThreadId'?: (string);
   'belongsToThreadId'?: (string);
   'messageSeenInfo'?: (_chat_MessageSeenInfo)[];
-  'createdAt'?: (string);
+  'sendAt'?: (string);
   'updatedAt'?: (string);
-  '_receiverIserId'?: "receiverIserId";
+  '_receiverUserId'?: "receiverUserId";
   '_isDeleted'?: "isDeleted";
   '_haveThreadId'?: "haveThreadId";
   '_belongsToThreadId'?: "belongsToThreadId";
 }
 
 export interface MessageOutput {
+  'messageId': (string);
   'messageText': (string);
   'messageType': (keyof typeof _chat_MessageTypeEnum);
   'roomId': (string);
   'senderUserId': (string);
-  'receiverIserId'?: (string);
+  'receiverUserId'?: (string);
   'emotionList': (_chat_EmotionOutput)[];
   'isDeleted'?: (boolean);
   'haveThreadId'?: (string);
   'belongsToThreadId'?: (string);
   'messageSeenInfo': (_chat_MessageSeenInfoOutput)[];
-  'createdAt': (string);
+  'sendAt': (string);
   'updatedAt': (string);
-  '_receiverIserId': "receiverIserId";
+  '_receiverUserId': "receiverUserId";
   '_isDeleted': "isDeleted";
   '_haveThreadId': "haveThreadId";
   '_belongsToThreadId': "belongsToThreadId";

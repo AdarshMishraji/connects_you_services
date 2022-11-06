@@ -3,7 +3,7 @@ import path from 'path';
 import * as grpc from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
 
-export type TServiceRecord = 'auth' | 'user' | 'room';
+export type TServiceRecord = 'auth' | 'user' | 'room' | 'chat';
 
 export type TInitialiseServiceAsClientParams = {
 	service: any,
@@ -15,6 +15,7 @@ export const ServicesRecord: Record<TServiceRecord, string> = {
 	auth: './proto/auth.proto',
 	user: './proto/user.proto',
 	room: './proto/room.proto',
+	chat: './proto/chat.proto',
 };
 
 export const getServiceProvider = (service: TServiceRecord) => {
