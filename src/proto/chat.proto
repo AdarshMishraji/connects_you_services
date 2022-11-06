@@ -60,7 +60,6 @@ message Message {
 	optional string receiverIserId = 4;
   repeated Emotion emotionList = 5;
 	optional bool isDeleted = 6;
-	optional string replyToMessageId = 7;
 	optional string haveThreadId = 8;
 	optional string belongsToThreadId = 9;
 	repeated MessageSeenInfo messageSeenInfo = 10;
@@ -80,7 +79,6 @@ message InsertMessageRequest {
 	MessageTypeEnum messageType = 1;
 	string roomId = 2;
 	string  senderUserId = 3;
-	string replyToMessageId = 4;
 	optional string receiverUserId = 5;
 	optional string belongsToThreadId = 9;
 }

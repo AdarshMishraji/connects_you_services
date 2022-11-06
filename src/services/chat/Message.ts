@@ -12,13 +12,13 @@ export interface Message {
   'receiverIserId'?: (string);
   'emotionList'?: (_chat_Emotion)[];
   'isDeleted'?: (boolean);
-  'replyToMessageId'?: (string);
   'haveThreadId'?: (string);
   'belongsToThreadId'?: (string);
   'messageSeenInfo'?: (_chat_MessageSeenInfo)[];
+  'createdAt'?: (string);
+  'updatedAt'?: (string);
   '_receiverIserId'?: "receiverIserId";
   '_isDeleted'?: "isDeleted";
-  '_replyToMessageId'?: "replyToMessageId";
   '_haveThreadId'?: "haveThreadId";
   '_belongsToThreadId'?: "belongsToThreadId";
 }
@@ -31,13 +31,13 @@ export interface MessageOutput {
   'receiverIserId'?: (string);
   'emotionList': (_chat_EmotionOutput)[];
   'isDeleted'?: (boolean);
-  'replyToMessageId'?: (string);
   'haveThreadId'?: (string);
   'belongsToThreadId'?: (string);
   'messageSeenInfo': (_chat_MessageSeenInfoOutput)[];
+  'createdAt': (string);
+  'updatedAt': (string);
   '_receiverIserId': "receiverIserId";
   '_isDeleted': "isDeleted";
-  '_replyToMessageId': "replyToMessageId";
   '_haveThreadId': "haveThreadId";
   '_belongsToThreadId': "belongsToThreadId";
 }

@@ -7,7 +7,6 @@ export interface InsertMessageRequest {
   'messageType'?: (_chat_MessageTypeEnum | keyof typeof _chat_MessageTypeEnum);
   'roomId'?: (string);
   'senderUserId'?: (string);
-  'replyToMessageId'?: (string);
   'receiverUserId'?: (string);
   'belongsToThreadId'?: (string);
   '_receiverUserId'?: "receiverUserId";
@@ -19,7 +18,6 @@ export interface InsertMessageRequestOutput {
   'messageType': (keyof typeof _chat_MessageTypeEnum);
   'roomId': (string);
   'senderUserId': (string);
-  'replyToMessageId': (string);
   'receiverUserId'?: (string);
   'belongsToThreadId'?: (string);
   '_receiverUserId': "receiverUserId";
