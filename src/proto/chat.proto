@@ -64,6 +64,8 @@ message Message {
 	optional string haveThreadId = 8;
 	optional string belongsToThreadId = 9;
 	repeated MessageSeenInfo messageSeenInfo = 10;
+	string createdAt = 11;
+	string updatedAt = 12;
 }
 
 message Thread {
