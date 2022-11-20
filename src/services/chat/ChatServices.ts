@@ -16,10 +16,14 @@ import type { GetThreadMessagesRequest as _chat_GetThreadMessagesRequest, GetThr
 import type { GetThreadMessagesResponse as _chat_GetThreadMessagesResponse, GetThreadMessagesResponseOutput as _chat_GetThreadMessagesResponseOutput } from '../chat/GetThreadMessagesResponse';
 import type { GetUserMessagesRequest as _chat_GetUserMessagesRequest, GetUserMessagesRequestOutput as _chat_GetUserMessagesRequestOutput } from '../chat/GetUserMessagesRequest';
 import type { GetUserMessagesResponse as _chat_GetUserMessagesResponse, GetUserMessagesResponseOutput as _chat_GetUserMessagesResponseOutput } from '../chat/GetUserMessagesResponse';
+import type { InsertEmotionForMessageRequest as _chat_InsertEmotionForMessageRequest, InsertEmotionForMessageRequestOutput as _chat_InsertEmotionForMessageRequestOutput } from '../chat/InsertEmotionForMessageRequest';
+import type { InsertEmotionForMessageResponse as _chat_InsertEmotionForMessageResponse, InsertEmotionForMessageResponseOutput as _chat_InsertEmotionForMessageResponseOutput } from '../chat/InsertEmotionForMessageResponse';
 import type { InsertMessageRequest as _chat_InsertMessageRequest, InsertMessageRequestOutput as _chat_InsertMessageRequestOutput } from '../chat/InsertMessageRequest';
 import type { InsertMessageResponse as _chat_InsertMessageResponse, InsertMessageResponseOutput as _chat_InsertMessageResponseOutput } from '../chat/InsertMessageResponse';
 import type { InsertMessageSeenInfoForMessagesRequest as _chat_InsertMessageSeenInfoForMessagesRequest, InsertMessageSeenInfoForMessagesRequestOutput as _chat_InsertMessageSeenInfoForMessagesRequestOutput } from '../chat/InsertMessageSeenInfoForMessagesRequest';
 import type { InsertMessageSeenInfoForMessagesResponse as _chat_InsertMessageSeenInfoForMessagesResponse, InsertMessageSeenInfoForMessagesResponseOutput as _chat_InsertMessageSeenInfoForMessagesResponseOutput } from '../chat/InsertMessageSeenInfoForMessagesResponse';
+import type { RemoveEmotionForMessageRequest as _chat_RemoveEmotionForMessageRequest, RemoveEmotionForMessageRequestOutput as _chat_RemoveEmotionForMessageRequestOutput } from '../chat/RemoveEmotionForMessageRequest';
+import type { RemoveEmotionForMessageResponse as _chat_RemoveEmotionForMessageResponse, RemoveEmotionForMessageResponseOutput as _chat_RemoveEmotionForMessageResponseOutput } from '../chat/RemoveEmotionForMessageResponse';
 import type { RemoveMessagesRequest as _chat_RemoveMessagesRequest, RemoveMessagesRequestOutput as _chat_RemoveMessagesRequestOutput } from '../chat/RemoveMessagesRequest';
 import type { RemoveMessagesResponse as _chat_RemoveMessagesResponse, RemoveMessagesResponseOutput as _chat_RemoveMessagesResponseOutput } from '../chat/RemoveMessagesResponse';
 
@@ -87,6 +91,15 @@ export interface ChatServicesClient extends grpc.Client {
   getUserMessages(argument: _chat_GetUserMessagesRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_GetUserMessagesResponseOutput>): grpc.ClientUnaryCall;
   getUserMessages(argument: _chat_GetUserMessagesRequest, callback: grpc.requestCallback<_chat_GetUserMessagesResponseOutput>): grpc.ClientUnaryCall;
   
+  InsertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  InsertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  InsertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  InsertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  insertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  insertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  insertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  insertEmotionForMessage(argument: _chat_InsertEmotionForMessageRequest, callback: grpc.requestCallback<_chat_InsertEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  
   InsertMessage(argument: _chat_InsertMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageResponseOutput>): grpc.ClientUnaryCall;
   InsertMessage(argument: _chat_InsertMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertMessageResponseOutput>): grpc.ClientUnaryCall;
   InsertMessage(argument: _chat_InsertMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageResponseOutput>): grpc.ClientUnaryCall;
@@ -104,6 +117,15 @@ export interface ChatServicesClient extends grpc.Client {
   insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
   insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
   insertMessageSeenInfoForMessages(argument: _chat_InsertMessageSeenInfoForMessagesRequest, callback: grpc.requestCallback<_chat_InsertMessageSeenInfoForMessagesResponseOutput>): grpc.ClientUnaryCall;
+  
+  RemoveEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  RemoveEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  RemoveEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  RemoveEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  removeEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  removeEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  removeEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
+  removeEmotionForMessage(argument: _chat_RemoveEmotionForMessageRequest, callback: grpc.requestCallback<_chat_RemoveEmotionForMessageResponseOutput>): grpc.ClientUnaryCall;
   
   RemoveMessages(argument: _chat_RemoveMessagesRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_chat_RemoveMessagesResponseOutput>): grpc.ClientUnaryCall;
   RemoveMessages(argument: _chat_RemoveMessagesRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_chat_RemoveMessagesResponseOutput>): grpc.ClientUnaryCall;
@@ -131,9 +153,13 @@ export interface ChatServicesHandlers extends grpc.UntypedServiceImplementation 
   
   GetUserMessages: grpc.handleUnaryCall<_chat_GetUserMessagesRequestOutput, _chat_GetUserMessagesResponse>;
   
+  InsertEmotionForMessage: grpc.handleUnaryCall<_chat_InsertEmotionForMessageRequestOutput, _chat_InsertEmotionForMessageResponse>;
+  
   InsertMessage: grpc.handleUnaryCall<_chat_InsertMessageRequestOutput, _chat_InsertMessageResponse>;
   
   InsertMessageSeenInfoForMessages: grpc.handleUnaryCall<_chat_InsertMessageSeenInfoForMessagesRequestOutput, _chat_InsertMessageSeenInfoForMessagesResponse>;
+  
+  RemoveEmotionForMessage: grpc.handleUnaryCall<_chat_RemoveEmotionForMessageRequestOutput, _chat_RemoveEmotionForMessageResponse>;
   
   RemoveMessages: grpc.handleUnaryCall<_chat_RemoveMessagesRequestOutput, _chat_RemoveMessagesResponse>;
   
@@ -147,7 +173,9 @@ export interface ChatServicesDefinition extends grpc.ServiceDefinition {
   GetRoomThreads: MethodDefinition<_chat_GetRoomThreadsRequest, _chat_GetRoomThreadsResponse, _chat_GetRoomThreadsRequestOutput, _chat_GetRoomThreadsResponseOutput>
   GetThreadMessages: MethodDefinition<_chat_GetThreadMessagesRequest, _chat_GetThreadMessagesResponse, _chat_GetThreadMessagesRequestOutput, _chat_GetThreadMessagesResponseOutput>
   GetUserMessages: MethodDefinition<_chat_GetUserMessagesRequest, _chat_GetUserMessagesResponse, _chat_GetUserMessagesRequestOutput, _chat_GetUserMessagesResponseOutput>
+  InsertEmotionForMessage: MethodDefinition<_chat_InsertEmotionForMessageRequest, _chat_InsertEmotionForMessageResponse, _chat_InsertEmotionForMessageRequestOutput, _chat_InsertEmotionForMessageResponseOutput>
   InsertMessage: MethodDefinition<_chat_InsertMessageRequest, _chat_InsertMessageResponse, _chat_InsertMessageRequestOutput, _chat_InsertMessageResponseOutput>
   InsertMessageSeenInfoForMessages: MethodDefinition<_chat_InsertMessageSeenInfoForMessagesRequest, _chat_InsertMessageSeenInfoForMessagesResponse, _chat_InsertMessageSeenInfoForMessagesRequestOutput, _chat_InsertMessageSeenInfoForMessagesResponseOutput>
+  RemoveEmotionForMessage: MethodDefinition<_chat_RemoveEmotionForMessageRequest, _chat_RemoveEmotionForMessageResponse, _chat_RemoveEmotionForMessageRequestOutput, _chat_RemoveEmotionForMessageResponseOutput>
   RemoveMessages: MethodDefinition<_chat_RemoveMessagesRequest, _chat_RemoveMessagesResponse, _chat_RemoveMessagesRequestOutput, _chat_RemoveMessagesResponseOutput>
 }

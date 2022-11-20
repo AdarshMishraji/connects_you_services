@@ -39,12 +39,15 @@ service ChatServices {
 	rpc GetThreadMessages (GetThreadMessagesRequest) returns (GetThreadMessagesResponse) {}
 	rpc GetRoomThreads (GetRoomThreadsRequest) returns (GetRoomThreadsResponse) {}  
 	rpc DeleteRoomThread (DeleteRoomThreadRequest) returns (DeleteRoomThreadResponse) {}  
+	rpc InsertEmotionForMessage (InsertEmotionForMessageRequest) returns (InsertEmotionForMessageResponse) {}
+	rpc RemoveEmotionForMessage (RemoveEmotionForMessageRequest) returns (RemoveEmotionForMessageResponse) {}
 }
 
 message Emotion {
-	string emotionString = 0;
-	string emotionSendByUserId = 1;
-	string emotionSendAt = 2;
+	string emotionId = 0;
+	string emotionString = 1;
+	string emotionSendByUserId = 2;
+	string emotionSendAt = 3;
 }
 
 message MessageSeenInfo {
@@ -225,3 +228,28 @@ message DeleteRoomThreadResponse {
 	ResponseStatusEnum status = 0;
 }
 // *************** DELETE_ROOM_THREAD Types *************** //
+
+
+// *************** INSERT_EMOTION_FOR_MESSAGE Types *************** //
+message InsertEmotionForMessageRequest {
+	string messageId = 0;
+	string emotionString = 1;
+	string emotionSendByUserId = 2;
+}
+
+message InsertEmotionForMessageResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** INSERT_EMOTION_FOR_MESSAGE Types *************** //
+
+
+// *************** REMOVE_EMOTION_FOR_MESSAGE_BY_SENDER_USER_ID Types *************** //
+message RemoveEmotionForMessageRequest {
+	string messageId = 0;
+	string emotionId = 1;
+}
+
+message RemoveEmotionForMessageResponse {
+	ResponseStatusEnum status = 0;
+}
+// *************** REMOVE_EMOTION_FOR_MESSAGE_BY_SENDER_USER_ID Types *************** //

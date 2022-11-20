@@ -1,16 +1,14 @@
 // Original file: src/proto/chat.proto
 
 
-export interface Emotion {
-  'emotionId'?: (string);
+export interface InsertEmotionForMessageRequest {
+  'messageId'?: (string);
   'emotionString'?: (string);
   'emotionSendByUserId'?: (string);
-  'emotionSendAt'?: (string);
 }
 
-export interface EmotionOutput {
-  'emotionId': (string);
+export interface InsertEmotionForMessageRequestOutput {
+  'messageId': (string);
   'emotionString': (string);
   'emotionSendByUserId': (string);
-  'emotionSendAt': (string);
 }

@@ -29,6 +29,8 @@ export interface ProtoGrpcType {
     GetUserMessagesRequest: MessageTypeDefinition
     GetUserMessagesResponse: MessageTypeDefinition
     GetUserMessagesResponseData: MessageTypeDefinition
+    InsertEmotionForMessageRequest: MessageTypeDefinition
+    InsertEmotionForMessageResponse: MessageTypeDefinition
     InsertMessageRequest: MessageTypeDefinition
     InsertMessageResponse: MessageTypeDefinition
     InsertMessageResponseData: MessageTypeDefinition
@@ -37,6 +39,8 @@ export interface ProtoGrpcType {
     Message: MessageTypeDefinition
     MessageSeenInfo: MessageTypeDefinition
     MessageTypeEnum: EnumTypeDefinition
+    RemoveEmotionForMessageRequest: MessageTypeDefinition
+    RemoveEmotionForMessageResponse: MessageTypeDefinition
     RemoveMessagesRequest: MessageTypeDefinition
     RemoveMessagesResponse: MessageTypeDefinition
     ResponseStatusEnum: EnumTypeDefinition
@@ -44,4 +48,4 @@ export interface ProtoGrpcType {
   }
 }
 
-export * from './chat/ChatServices';export * from './chat/CreateMessageThreadRequest';export * from './chat/CreateMessageThreadResponse';export * from './chat/DeleteRoomThreadRequest';export * from './chat/DeleteRoomThreadResponse';export * from './chat/EditMessageRequest';export * from './chat/EditMessageResponse';export * from './chat/Emotion';export * from './chat/GetRoomMessagesRequest';export * from './chat/GetRoomMessagesResponse';export * from './chat/GetRoomMessagesResponseData';export * from './chat/GetRoomThreadsRequest';export * from './chat/GetRoomThreadsResponse';export * from './chat/GetRoomThreadsResponseData';export * from './chat/GetThreadMessagesRequest';export * from './chat/GetThreadMessagesResponse';export * from './chat/GetThreadMessagesResponseData';export * from './chat/GetUserMessagesRequest';export * from './chat/GetUserMessagesResponse';export * from './chat/GetUserMessagesResponseData';export * from './chat/InsertMessageRequest';export * from './chat/InsertMessageResponse';export * from './chat/InsertMessageResponseData';export * from './chat/InsertMessageSeenInfoForMessagesRequest';export * from './chat/InsertMessageSeenInfoForMessagesResponse';export * from './chat/Message';export * from './chat/MessageSeenInfo';export * from './chat/MessageTypeEnum';export * from './chat/RemoveMessagesRequest';export * from './chat/RemoveMessagesResponse';export * from './chat/ResponseStatusEnum';export * from './chat/Thread';
+export * from './chat/ChatServices';export * from './chat/CreateMessageThreadRequest';export * from './chat/CreateMessageThreadResponse';export * from './chat/DeleteRoomThreadRequest';export * from './chat/DeleteRoomThreadResponse';export * from './chat/EditMessageRequest';export * from './chat/EditMessageResponse';export * from './chat/Emotion';export * from './chat/GetRoomMessagesRequest';export * from './chat/GetRoomMessagesResponse';export * from './chat/GetRoomMessagesResponseData';export * from './chat/GetRoomThreadsRequest';export * from './chat/GetRoomThreadsResponse';export * from './chat/GetRoomThreadsResponseData';export * from './chat/GetThreadMessagesRequest';export * from './chat/GetThreadMessagesResponse';export * from './chat/GetThreadMessagesResponseData';export * from './chat/GetUserMessagesRequest';export * from './chat/GetUserMessagesResponse';export * from './chat/GetUserMessagesResponseData';export * from './chat/InsertEmotionForMessageRequest';export * from './chat/InsertEmotionForMessageResponse';export * from './chat/InsertMessageRequest';export * from './chat/InsertMessageResponse';export * from './chat/InsertMessageResponseData';export * from './chat/InsertMessageSeenInfoForMessagesRequest';export * from './chat/InsertMessageSeenInfoForMessagesResponse';export * from './chat/Message';export * from './chat/MessageSeenInfo';export * from './chat/MessageTypeEnum';export * from './chat/RemoveEmotionForMessageRequest';export * from './chat/RemoveEmotionForMessageResponse';export * from './chat/RemoveMessagesRequest';export * from './chat/RemoveMessagesResponse';export * from './chat/ResponseStatusEnum';export * from './chat/Thread';
